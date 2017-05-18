@@ -28,7 +28,7 @@ public class Lijstadapter extends ArrayAdapter<Attractie>{
         Attractie attractie = getItem(position);
 
         if(convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.lijsta,parent,false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_lijst_attractie,parent,false);
         }
 
         TextView naamAttractie = (TextView) convertView.findViewById(R.id.tv_adapter_naam_a);

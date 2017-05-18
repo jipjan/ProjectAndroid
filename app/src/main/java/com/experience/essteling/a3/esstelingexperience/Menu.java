@@ -18,7 +18,7 @@ public class Menu extends AppCompatActivity {
         btn_menu_meetmij.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), MeetMij.class);
+                Intent i = new Intent(getApplicationContext(), Lijst_attractie.class);
                 startActivity(i);
             }
         });
@@ -27,7 +27,7 @@ public class Menu extends AppCompatActivity {
         btn_menu_metingen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), Metingen.class);
+                Intent i = new Intent(getApplicationContext(), MetingenAchtbaan.class);
                 startActivity(i);
             }
         });

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.experience.essteling.a3.esstelingexperience.LijstA">
+    tools:context="com.experience.essteling.a3.esstelingexperience.Lijst_attractie">
 
     <TextView
         android:id="@+id/tv_lijstA_metingen"
@@ -24,10 +24,6 @@
         android:id="@+id/btn_lijstA_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="0dp"
         android:text="menu"
         app:layout_constraintBottom_toTopOf="@+id/tv_lijstA_metingen"
         app:layout_constraintHorizontal_bias="0.028"
@@ -38,12 +34,8 @@
 
     <ListView
         android:id="@+id/lv_lijstA_lijstProjecten"
-        android:layout_width="399dp"
+        android:layout_width="0dp"
         android:layout_height="394dp"
-        android:layout_marginBottom="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintLeft_toLeftOf="parent"

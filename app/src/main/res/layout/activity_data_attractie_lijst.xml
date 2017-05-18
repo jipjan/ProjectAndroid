@@ -7,10 +7,10 @@
     tools:context="com.experience.essteling.a3.esstelingexperience.DataAttractieLijst">
 
     <Button
-        android:id="@+id/btn_metingen_achtbaan_menu"
+        android:id="@+id/btn_data_attractie_lijst_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@color/Buttons"
@@ -20,20 +20,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/im_metingen_achtbaan_logo"
+        android:id="@+id/im_data_attractie_lijst_logo"
         android:layout_width="260dp"
         android:layout_height="70dp"
         android:layout_marginLeft="49dp"
         android:layout_marginStart="49dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintLeft_toRightOf="@+id/btn_metingen_achtbaan_menu"
+        app:layout_constraintLeft_toRightOf="@+id/btn_data_attractie_lijst_menu"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/esstelinglogo2"
         tools:layout_editor_absoluteX="227dp"
         tools:layout_editor_absoluteY="62dp" />
 
     <TextView
-        android:id="@+id/tv_metingen_achtbaan_nattractie"
+        android:id="@+id/tv_data_attractie_lijst_attractie"
         android:layout_width="127dp"
         android:layout_height="39dp"
         android:layout_marginEnd="8dp"
@@ -47,10 +47,10 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_metingen_achtbaan_menu" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_data_attractie_lijst_menu" />
 
     <ImageView
-        android:id="@+id/im_metingen_achtbaan_attractie"
+        android:id="@+id/im_data_attractie_lijst_attractie"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginLeft="8dp"
@@ -58,13 +58,13 @@
         android:layout_marginTop="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_metingen_achtbaan_nattractie"
+        app:layout_constraintTop_toBottomOf="@+id/tv_data_attractie_lijst_attractie"
         app:srcCompat="@android:color/background_dark"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp" />
 
     <ListView
-        android:id="@+id/listv_metingen_achtbaan_data"
+        android:id="@+id/listv_data_attractie_lijst_datums"
         android:layout_width="373dp"
         android:layout_height="238dp"
         android:layout_marginBottom="8dp"
@@ -75,7 +75,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/im_metingen_achtbaan_attractie"
+        app:layout_constraintTop_toBottomOf="@+id/im_data_attractie_lijst_attractie"
         app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>

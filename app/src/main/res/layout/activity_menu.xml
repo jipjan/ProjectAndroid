@@ -8,33 +8,41 @@
 
     <Button
         android:id="@+id/btn_menu_meetmij"
-        android:layout_width="375dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginBottom="24dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
         android:background="@color/Buttons"
         android:text="@string/Meetmij"
         android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toTopOf="@+id/btn_menu_metingen"
         app:layout_constraintHorizontal_bias="0.285"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        tools:layout_constraintLeft_creator="1" />
 
     <Button
         android:id="@+id/btn_menu_metingen"
-        android:layout_width="375dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="153dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginBottom="155dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
         android:background="@color/Buttons"
         android:text="@string/Metingen"
         android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        tools:layout_constraintLeft_creator="1" />
 
     <TextView
         android:id="@+id/tv_menu_menu"
@@ -52,19 +60,25 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/im_menu_logo"
         app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintHorizontal_bias="0.607" />
+        app:layout_constraintHorizontal_bias="0.607"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
     <ImageView
         android:id="@+id/im_menu_logo"
-        android:layout_width="361dp"
+        android:layout_width="0dp"
         android:layout_height="105dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginRight="11dp"
         android:layout_marginTop="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/esstelinglogo2" />
+        app:srcCompat="@drawable/esstelinglogo2"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginStart="11dp"
+        android:layout_marginEnd="11dp"
+        tools:layout_constraintLeft_creator="1" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -76,6 +90,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_menu_metingen"
-        app:srcCompat="@drawable/rollercoaster" />
+        app:srcCompat="@drawable/rollercoaster"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
 </android.support.constraint.ConstraintLayout>

@@ -7,7 +7,7 @@
     tools:context="com.experience.essteling.a3.esstelingexperience.MeetMijLijst">
 
     <TextView
-        android:id="@+id/tv_lijstA_metingen"
+        android:id="@+id/tv_meet_mij_lijst_metingen"
         android:layout_width="135dp"
         android:layout_height="45dp"
         android:text="@string/Metingen"
@@ -18,14 +18,14 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.137" />
+        app:layout_constraintVertical_bias="0.133" />
 
     <Button
-        android:id="@+id/btn_lijstA_menu"
+        android:id="@+id/btn_meet_mij_lijst_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Menu"
-        app:layout_constraintBottom_toTopOf="@+id/tv_lijstA_metingen"
+        app:layout_constraintBottom_toTopOf="@+id/tv_meet_mij_lijst_metingen"
         app:layout_constraintHorizontal_bias="0.028"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -33,14 +33,14 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ListView
-        android:id="@+id/lv_lijstA_lijstProjecten"
+        android:id="@+id/lv_meet_mij_lijst_lijstProjecten"
         android:layout_width="0dp"
         android:layout_height="394dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_lijstA_metingen"
+        app:layout_constraintTop_toBottomOf="@+id/tv_meet_mij_lijst_metingen"
         app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>

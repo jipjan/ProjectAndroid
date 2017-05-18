@@ -27,7 +27,7 @@ public class Menu extends AppCompatActivity {
         btn_menu_metingen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), DataAttractieLijst.class);
+                Intent i = new Intent(getApplicationContext(), OudeMetingenLijst.class);
                 startActivity(i);
             }
         });

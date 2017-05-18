@@ -12,30 +12,14 @@
         android:layout_height="34dp"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:text="naam attractie"
         android:textColor="@color/colorAccent"
         android:textSize="24sp"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.631"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_adapter_meting"
-        android:layout_width="108dp"
-        android:layout_height="51dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="0dp"
-        android:background="@color/Buttons"
-        android:text="@string/Meetmij"
-        android:textColor="@android:color/background_light"
-        app:layout_constraintHorizontal_bias="0.971"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_adapter_naam_a"
-        tools:layout_editor_absoluteX="260dp" />
 
     <ImageView
         android:id="@+id/iv_adapter_foto_a"

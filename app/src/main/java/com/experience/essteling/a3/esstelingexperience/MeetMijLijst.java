@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -14,8 +15,7 @@ public class MeetMijLijst extends AppCompatActivity {
 
     ArrayList<Attractie> attracties = new ArrayList<>();
     ListView lv_attracties;
-    ArrayAdapter adapter;
-
+    public Button btn_meet_mij_lijst_menu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,11 +49,20 @@ public class MeetMijLijst extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Attractie attractie = attracties.get(position);
-                Intent intent = new Intent(getApplicationContext(), AttractieMetingSpec.class);
+                Intent intent = new Intent(getApplicationContext(), MeetMij.class);
 
                 intent.putExtra("ATTRACTIE", attractie);
 
                 startActivity(intent);
+            }
+        });
+
+        btn_meet_mij_lijst_menu = (Button) findViewById(R.id.btn_meet_mij_lijst_menu);
+        btn_meet_mij_lijst_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), Menu.class);
+                startActivity(i);
             }
         });
 

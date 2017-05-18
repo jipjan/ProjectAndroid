@@ -6,21 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.experience.essteling.a3.esstelingexperience.Menu">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="1000dp"
-        android:layout_height="1000dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.754"
-        app:srcCompat="@color/Background" />
-
     <Button
         android:id="@+id/btn_menu_meetmij"
         android:layout_width="375dp"
@@ -28,8 +13,9 @@
         android:layout_marginBottom="24dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:background="@color/Rood"
-        android:text="Button"
+        android:background="@color/Buttons"
+        android:text="@string/Meetmij"
+        android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toTopOf="@+id/btn_menu_metingen"
         app:layout_constraintHorizontal_bias="0.285"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -42,8 +28,9 @@
         android:layout_marginBottom="153dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:background="@color/Rood"
-        android:text="Button"
+        android:background="@color/Buttons"
+        android:text="@string/Metingen"
+        android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -57,14 +44,15 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:text="MENU"
-        android:textColor="@color/Rood"
+        android:text="@string/Menu"
+        android:textColor="@color/colorAccent"
         android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_menu_meetmij"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/im_menu_logo"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.607" />
 
     <ImageView
         android:id="@+id/im_menu_logo"
@@ -76,7 +64,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/essteling3" />
+        app:srcCompat="@drawable/esstelinglogo2" />
 
     <ImageView
         android:id="@+id/imageView7"

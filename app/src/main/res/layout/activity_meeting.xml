@@ -6,20 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.experience.essteling.a3.esstelingexperience.Meeting">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="1000dp"
-        android:layout_height="1000dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@color/Background" />
-
     <Button
         android:id="@+id/btn_meeting_menu"
         android:layout_width="wrap_content"
@@ -27,7 +13,9 @@
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@color/Buttons"
         android:text="@string/Menu"
+        android:textColor="@android:color/background_light"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,7 +28,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintLeft_toRightOf="@+id/btn_meeting_menu"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/essteling3" />
+        app:srcCompat="@drawable/esstelinglogo2" />
 
     <TextView
         android:id="@+id/tv_meeting_naamAttractie"
@@ -50,6 +38,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="13dp"
         android:text="@string/NaamAttractie"
+        android:textColor="@color/colorAccent"
         android:textSize="30sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -73,7 +62,9 @@
         android:layout_marginLeft="27dp"
         android:layout_marginStart="27dp"
         android:layout_marginTop="8dp"
+        android:background="@color/Buttons"
         android:text="@string/Delen"
+        android:textColor="@android:color/background_light"
         android:textSize="10sp"
         app:layout_constraintLeft_toRightOf="@+id/im_meeting_attractie"
         app:layout_constraintTop_toBottomOf="@+id/tv_meeting_naamAttractie" />
@@ -87,8 +78,11 @@
         android:layout_marginRight="3dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@color/Buttons"
         android:text="@string/Meetmij"
+        android:textColor="@android:color/background_light"
         android:textSize="10sp"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintLeft_toRightOf="@+id/btn_meeting_delen"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_meeting_naamAttractie" />
@@ -99,9 +93,12 @@
         android:layout_height="35dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/Buttons"
         android:text="@string/Verwijderen"
+        android:textColor="@android:color/background_light"
         android:textSize="10sp"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toRightOf="@+id/im_meeting_attractie"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_meeting_delen" />
@@ -113,6 +110,7 @@
         android:layout_marginLeft="0dp"
         android:layout_marginRight="8dp"
         android:text="@string/Hoogte"
+        android:textColor="@color/colorAccent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/guideline"
         app:layout_constraintRight_toRightOf="parent"
@@ -126,6 +124,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/Gemiddelde"
+        android:textColor="@color/colorAccent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/guideline"
         app:layout_constraintRight_toRightOf="parent"
@@ -139,6 +138,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/Hoogste"
+        android:textColor="@color/colorAccent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/guideline"
         app:layout_constraintRight_toRightOf="parent"
@@ -164,6 +164,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="16dp"
         android:text="@string/Snelheid"
+        android:textColor="@color/colorAccent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/guideline"
         app:layout_constraintRight_toRightOf="parent"
@@ -177,6 +178,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/Gemiddelde"
+        android:textColor="@color/colorAccent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/guideline"
         app:layout_constraintRight_toRightOf="parent"
@@ -190,6 +192,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/Snelste"
+        android:textColor="@color/colorAccent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/guideline"
         app:layout_constraintRight_toRightOf="parent"
@@ -231,6 +234,7 @@
         android:layout_marginRight="0dp"
         android:layout_marginTop="0dp"
         android:text="TextView"
+        android:textColor="@color/colorAccent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toRightOf="@+id/tv_meeting_h_gem"
         app:layout_constraintRight_toLeftOf="@+id/guideline2"
@@ -244,6 +248,7 @@
         android:layout_marginRight="0dp"
         android:layout_marginTop="0dp"
         android:text="TextView"
+        android:textColor="@color/colorAccent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toRightOf="@+id/tv_meeting_h_max"
         app:layout_constraintRight_toLeftOf="@+id/guideline2"
@@ -257,6 +262,7 @@
         android:layout_marginRight="0dp"
         android:layout_marginTop="-7dp"
         android:text="TextView"
+        android:textColor="@color/colorAccent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toRightOf="@+id/tv_meeting_s_gem"
         app:layout_constraintRight_toLeftOf="@+id/guideline2"
@@ -270,6 +276,7 @@
         android:layout_marginRight="0dp"
         android:layout_marginTop="0dp"
         android:text="TextView"
+        android:textColor="@color/colorAccent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toRightOf="@+id/tv_meeting_s_max"
         app:layout_constraintRight_toLeftOf="@+id/guideline2"

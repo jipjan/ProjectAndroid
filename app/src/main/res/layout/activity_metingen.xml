@@ -39,7 +39,7 @@
         android:layout_marginStart="40dp"
         app:layout_constraintLeft_toRightOf="@+id/btn_metingen_menu"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/essteling3" />
+        app:srcCompat="@drawable/esstelinglogo2" />
 
     <TextView
         android:id="@+id/tv_metingen_metingen"

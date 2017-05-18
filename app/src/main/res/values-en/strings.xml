@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Essteling Experience</string>
+    <string name="Delen">Share</string>
+    <string name="Gemiddelde">Average</string>
+    <string name="Hoogste">Highest</string>
+    <string name="Hoogte">Hight</string>
+    <string name="Meetmij">Measure Me</string>
+    <string name="Menu">Menu</string>
+    <string name="Metingen">Measurment</string>
+    <string name="NaamAttractie">Attraction</string>
+    <string name="Progress">Progress</string>
+    <string name="Snelheid">Speed</string>
+    <string name="Snelste">Highest Speed</string>
+    <string name="Start">Start</string>
+    <string name="Stop">Stop</string>
+    <string name="Verwijderen">Delete</string>
+</resources>

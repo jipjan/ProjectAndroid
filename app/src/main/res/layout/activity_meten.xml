@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.experience.essteling.a3.esstelingexperience.Meten">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="1000dp"
+        android:layout_height="1000dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@color/Background" />
+
+    <ImageView
+        android:id="@+id/im_meten_logo"
+        android:layout_width="260dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="18dp"
+        app:layout_constraintLeft_toRightOf="@+id/btn_meten_menu"
+        app:srcCompat="@drawable/essteling3"
+        tools:layout_editor_absoluteY="8dp" />
+
+    <Button
+        android:id="@+id/btn_meten_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Menu"
+        app:layout_constraintBottom_toTopOf="@+id/tv_meten_meetmij"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tv_meten_meetmij"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="11dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Meetmij"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_meten_attractie"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/im_meten_logo"
+        app:layout_constraintVertical_bias="0.625" />
+
+    <TextView
+        android:id="@+id/tv_meten_attractie"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/NaamAttractie"
+        app:layout_constraintBottom_toTopOf="@+id/pb_meten_meten"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/pb_meten_meten"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="280dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.602"
+        android:layout_marginBottom="29dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_meten_progress" />
+
+    <TextView
+        android:id="@+id/tv_meten_progress"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="22dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/Progress"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_meten_start"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/btn_meten_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        android:layout_marginLeft="61dp"
+        android:text="@string/Start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/btn_meten_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        android:layout_marginRight="43dp"
+        android:text="@string/Stop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

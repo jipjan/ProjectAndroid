@@ -7,6 +7,7 @@
     tools:context="com.experience.essteling.a3.esstelingexperience.MainActivity">
 
     <TextView
+        android:id="@+id/kaas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"

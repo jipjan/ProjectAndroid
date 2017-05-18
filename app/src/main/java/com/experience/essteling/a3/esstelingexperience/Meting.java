@@ -8,11 +8,11 @@ import java.util.Date;
  */
 
 
-public class Meeting implements Serializable {
+public class Meting implements Serializable {
     private Date time;
     private int speed;
 
-    public Meeting(Date time, int speed) {
+    public Meting(Date time, int speed) {
         this.time = time;
         this.speed = speed;
     }

@@ -16,9 +16,9 @@ import java.util.ArrayList;
  * Created by Lois Gussenhoven on 18-5-2017.
  */
 
-public class Lijstadapter extends ArrayAdapter<Attractie>{
+public class LijstAdapter extends ArrayAdapter<Attractie>{
 
-    public Lijstadapter(Context context, ArrayList<Attractie> attracties) {
+    public LijstAdapter(Context context, ArrayList<Attractie> attracties) {
         super(context,0, attracties);
     }
 
@@ -28,7 +28,7 @@ public class Lijstadapter extends ArrayAdapter<Attractie>{
         Attractie attractie = getItem(position);
 
         if(convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_lijst_attractie,parent,false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_meet_mij_lijst,parent,false);
         }
 
         TextView naamAttractie = (TextView) convertView.findViewById(R.id.tv_adapter_naam_a);

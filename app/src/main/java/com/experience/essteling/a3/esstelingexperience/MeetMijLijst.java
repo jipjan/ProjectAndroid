@@ -10,7 +10,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class Lijst_attractie extends AppCompatActivity {
+public class MeetMijLijst extends AppCompatActivity {
 
     ArrayList<Attractie> attracties = new ArrayList<>();
     ListView lv_attracties;
@@ -19,7 +19,7 @@ public class Lijst_attractie extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lijst_attractie);
+        setContentView(R.layout.activity_meet_mij_lijst);
 
         attracties.add(new Attractie("4D-film",R.drawable.movie));
         attracties.add(new Attractie("Bobslee",R.drawable.bobslee));
@@ -49,7 +49,7 @@ public class Lijst_attractie extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Attractie attractie = attracties.get(position);
-                Intent intent = new Intent(getApplicationContext(), Meeting.class);
+                Intent intent = new Intent(getApplicationContext(), AttractieMetingSpec.class);
 
                 intent.putExtra("ATTRACTIE", attractie);
 
@@ -57,6 +57,6 @@ public class Lijst_attractie extends AppCompatActivity {
             }
         });
 
-        lv_attracties.setAdapter(new Lijstadapter(getApplicationContext(), attracties));
+        lv_attracties.setAdapter(new LijstAdapter(getApplicationContext(), attracties));
     }
 }

@@ -21,13 +21,13 @@
         app:layout_constraintHorizontal_bias="0.532" />
 
     <Button
-        android:id="@+id/btn_adapter_meeting"
+        android:id="@+id/btn_adapter_meting"
         android:layout_width="86dp"
         android:layout_height="42dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="11dp"
-        android:text="meeting"
+        android:text="@string/meting"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

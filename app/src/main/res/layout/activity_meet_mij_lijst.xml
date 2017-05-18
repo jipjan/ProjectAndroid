@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.experience.essteling.a3.esstelingexperience.Lijst_attractie">
+    tools:context="com.experience.essteling.a3.esstelingexperience.MeetMijLijst">
 
     <TextView
         android:id="@+id/tv_lijstA_metingen"
         android:layout_width="135dp"
         android:layout_height="45dp"
-        android:text="Metingen"
+        android:text="@string/Metingen"
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,7 +24,7 @@
         android:id="@+id/btn_lijstA_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="menu"
+        android:text="@string/Menu"
         app:layout_constraintBottom_toTopOf="@+id/tv_lijstA_metingen"
         app:layout_constraintHorizontal_bias="0.028"
         app:layout_constraintLeft_toLeftOf="parent"

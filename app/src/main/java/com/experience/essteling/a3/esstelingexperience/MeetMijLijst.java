@@ -42,7 +42,7 @@ public class MeetMijLijst extends AppCompatActivity {
         attracties.add(new Attractie("Jungle",R.drawable.jungle));
         attracties.add(new Attractie("the force", R.drawable.achtbaan));
 
-        lv_attracties = (ListView) findViewById(R.id.lv_lijstA_lijstProjecten);
+        lv_attracties = (ListView) findViewById(R.id.lv_meet_mij_lijst_lijstProjecten);
 
 
         lv_attracties.setOnItemClickListener(new AdapterView.OnItemClickListener() {

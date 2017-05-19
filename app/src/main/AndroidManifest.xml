@@ -17,8 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MeetMij" />
-        <activity android:name=".Metingen" />
-        <activity android:name=".MeetMij" />
+        <activity android:name=".MeetMijLijst" />
         <activity android:name=".DataAttractieLijst" />
         <activity android:name=".AttractieMetingSpec" />
         <activity android:name=".OudeMetingenLijst"></activity>

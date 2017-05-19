@@ -30,7 +30,7 @@ public class LijstAdapter extends ArrayAdapter<Attractie>{
         if(convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_meet_mij_lijst,parent,false);
         }
-
+        // TODO: Verkeerde view
         TextView naamAttractie = (TextView) convertView.findViewById(R.id.tv_adapter_naam_a);
         naamAttractie.setText(String.valueOf((attractie.getNaam())));
 

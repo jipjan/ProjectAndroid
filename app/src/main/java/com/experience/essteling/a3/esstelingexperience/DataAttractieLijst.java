@@ -6,7 +6,9 @@ import android.view.View;
 import android.widget.Button;
 
 public class DataAttractieLijst extends AppCompatActivity {
+
     public Button btn_metingen_achtbaan_menu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -35,19 +35,8 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="8dp" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="260dp"
-        android:layout_height="70dp"
-        app:srcCompat="@drawable/esstelinglogo2"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginEnd="8dp" />
-
     <ListView
-        android:id="@+id/lv_oude_metingen_lijst_list"
+        android:id="@+id/lv_oude_metingen_lijst"
         android:layout_width="376dp"
         android:layout_height="364dp"
         android:layout_marginBottom="8dp"

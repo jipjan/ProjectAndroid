@@ -20,14 +20,7 @@ public class OudeMetingenLijst extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_oude_metingen_lijst);
 
-        btn_oude_metingen_lijst_menu = (Button) findViewById(R.id.btn_oude_metingen_lijst_menu);
-        btn_oude_metingen_lijst_menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), Menu.class);
-                startActivity(i);
-            }
-        });
+
 
         attracties.add(new Attractie("4D-film",R.drawable.movie));
         attracties.add(new Attractie("Bobslee",R.drawable.bobslee));
@@ -50,7 +43,7 @@ public class OudeMetingenLijst extends AppCompatActivity {
         attracties.add(new Attractie("Jungle",R.drawable.jungle));
         attracties.add(new Attractie("the force", R.drawable.achtbaan));
 
-        lv_oude_metingen_lijst_list = (ListView) findViewById(R.id.lv_oude_metingen_lijst_list);
+        lv_oude_metingen_lijst_list = (ListView) findViewById(R.id.lv_oude_metingen_lijst);
         lv_oude_metingen_lijst_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -63,5 +56,14 @@ public class OudeMetingenLijst extends AppCompatActivity {
             }
         });
         lv_oude_metingen_lijst_list.setAdapter(new LijstAdapter(getApplicationContext(), attracties));
+
+        btn_oude_metingen_lijst_menu = (Button) findViewById(R.id.btn_oude_metingen_lijst_menu);
+        btn_oude_metingen_lijst_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), Menu.class);
+                startActivity(i);
+            }
+        });
     }
 }

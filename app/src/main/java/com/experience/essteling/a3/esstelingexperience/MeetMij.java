@@ -7,8 +7,10 @@ import android.view.View;
 import android.widget.Button;
 
 public class MeetMij extends AppCompatActivity {
+
     public Button btn_meet_mij_menu;
     public Button btn_meet_mij_stop;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

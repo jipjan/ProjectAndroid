@@ -10,7 +10,7 @@ public class Attractie implements Serializable{
     private String naam;
     private int image;
 
-    public Attractie(String naam, int imageNaam) {
+    public Attractie(String naam, int image) {
         this.naam = naam;
         this.image = image;
     }

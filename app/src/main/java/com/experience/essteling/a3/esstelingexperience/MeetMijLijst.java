@@ -16,6 +16,8 @@ public class MeetMijLijst extends AppCompatActivity {
     ArrayList<Attractie> attracties = new ArrayList<>();
     ListView lv_attracties;
     public Button btn_meet_mij_lijst_menu;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +30,7 @@ public class MeetMijLijst extends AppCompatActivity {
         attracties.add(new Attractie("Rupsje blij",R.drawable.rupsje));
         attracties.add(new Attractie("Spookhuis,Dracula",R.drawable.spookhuis));
         attracties.add(new Attractie("Klimmuur",R.drawable.klimmuur));
-        attracties.add(new Attractie("uitkijktoren",R.drawable.uitkijktoren));
+        attracties.add(new Attractie("Uitkijktoren",R.drawable.uitkijktoren));
         attracties.add(new Attractie("Zweefmolen",R.drawable.zweefmolen));
         attracties.add(new Attractie("Megatron",R.drawable.achtbaana));
         attracties.add(new Attractie("Mini trein",R.drawable.mini_trein));
@@ -42,7 +44,7 @@ public class MeetMijLijst extends AppCompatActivity {
         attracties.add(new Attractie("Jungle",R.drawable.jungle));
         attracties.add(new Attractie("the force", R.drawable.achtbaan));
 
-        lv_attracties = (ListView) findViewById(R.id.lv_meet_mij_lijst_lijstProjecten);
+        lv_attracties = (ListView) findViewById(R.id.lv_meet_mij_lijst_lijstAttracties);
 
 
         lv_attracties.setOnItemClickListener(new AdapterView.OnItemClickListener() {

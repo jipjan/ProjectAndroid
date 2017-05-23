@@ -11,6 +11,9 @@ public class AttractieMetingSpec extends AppCompatActivity {
     public Button btn_attractie_meting_spec_delen;
     public Button btn_attractie_meting_spec_meetmij;
     public Button btn_attractie_meting_spec_verwijderen;
+    public Intent shareIntent;
+    public String shareBody = "" ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,14 +27,20 @@ public class AttractieMetingSpec extends AppCompatActivity {
                 startActivity(i);
             }
         });
-//        btn_attractie_meting_spec_delen = (Button) findViewById(R.id.btn_attractie_meting_spec_delen);
-//        btn_attractie_meting_spec_delen.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(getApplicationContext(), DataAttractieLijst.class);
-//                startActivity(i);
-//            }
-//        });
+
+        btn_attractie_meting_spec_delen = (Button) findViewById(R.id.btn_attractie_meting_spec_delen);
+        btn_attractie_meting_spec_delen.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT,"My app");
+                shareIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
+                startActivity(Intent.createChooser(shareIntent, "Share via"));
+            }
+        });
+
         btn_attractie_meting_spec_meetmij = (Button) findViewById(R.id.btn_attractie_meting_spec_meetmij);
         btn_attractie_meting_spec_meetmij.setOnClickListener(new View.OnClickListener() {
             @Override

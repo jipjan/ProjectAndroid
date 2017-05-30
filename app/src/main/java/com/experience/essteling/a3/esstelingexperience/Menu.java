@@ -2,7 +2,6 @@ package com.experience.essteling.a3.esstelingexperience;
 
 import android.animation.ValueAnimator;
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +21,7 @@ public class Menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
 
         imageBackground1 = (ImageView) findViewById(R.id.background1);
         imageBackground2 = (ImageView) findViewById(R.id.background2);;
@@ -56,7 +56,7 @@ public class Menu extends AppCompatActivity {
         btn_menu_metingen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), OudeMetingenLijst.class);
+                Intent i = new Intent(getApplicationContext(), MetingenLijst.class);
                 startActivity(i);
             }
         });

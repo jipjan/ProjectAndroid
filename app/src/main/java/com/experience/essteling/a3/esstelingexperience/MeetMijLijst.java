@@ -23,6 +23,9 @@ public class MeetMijLijst extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meet_mij_lijst);
 
+        setTitle("Meet Mij");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         attracties.add(new Attractie("4D-film",R.drawable.movie));
         attracties.add(new Attractie("Bobslee",R.drawable.bobslee));
         attracties.add(new Attractie("Doolhof",R.drawable.doolhof));
@@ -59,14 +62,7 @@ public class MeetMijLijst extends AppCompatActivity {
             }
         });
 
-        btn_meet_mij_lijst_menu = (Button) findViewById(R.id.btn_meet_mij_lijst_menu);
-        btn_meet_mij_lijst_menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), Menu.class);
-                startActivity(i);
-            }
-        });
+       
 
         lv_attracties.setAdapter(new LijstAdapter(getApplicationContext(), attracties));
     }

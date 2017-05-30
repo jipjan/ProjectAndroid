@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Menu">
+        <activity android:name=".Menu"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,11 +18,23 @@
             </intent-filter>
         </activity>
         <activity android:name=".MeetMij" />
-        <activity android:name=".MeetMijLijst" />
+        <activity android:name=".MeetMijLijst"
+            android:parentActivityName=".Menu"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.experience.essteling.a3.esstelingexperience.Menu" />
+        </activity>
         <activity android:name=".DataAttractieLijst" />
         <activity android:name=".AttractieMetingSpec" />
-        <activity android:name=".OudeMetingenLijst">
+        <activity android:name=".MetingenLijst"
+            android:parentActivityName=".Menu"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.experience.essteling.a3.esstelingexperience.Menu" />
         </activity>
+
     </application>
 
 </manifest>

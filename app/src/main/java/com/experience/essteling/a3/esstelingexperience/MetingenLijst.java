@@ -10,15 +10,17 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class OudeMetingenLijst extends AppCompatActivity {
+public class MetingenLijst extends AppCompatActivity {
     public ListView lv_oude_metingen_lijst_list;
-    public Button btn_oude_metingen_lijst_menu;
     ArrayList<Attractie> attracties = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_oude_metingen_lijst);
+        setContentView(R.layout.activity_metingen_lijst);
+
+        setTitle("Metingen");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
 
@@ -57,13 +59,6 @@ public class OudeMetingenLijst extends AppCompatActivity {
         });
         lv_oude_metingen_lijst_list.setAdapter(new LijstAdapter(getApplicationContext(), attracties));
 
-        btn_oude_metingen_lijst_menu = (Button) findViewById(R.id.btn_oude_metingen_lijst_menu);
-        btn_oude_metingen_lijst_menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), Menu.class);
-                startActivity(i);
-            }
-        });
+
     }
 }

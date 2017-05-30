@@ -6,5 +6,7 @@
     <color name="Background">#f09916</color>
     <color name="Buttons">#078605</color>
     <color name="Rood">#a80003</color>
+    <color name="meetMijAchtergrond">#ffca28</color>
+    <color name="metingen">#81e70a</color>
 
 </resources>

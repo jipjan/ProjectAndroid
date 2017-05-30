@@ -13,9 +13,9 @@
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:background="@color/Buttons"
+        android:background="@android:color/transparent"
         android:text="@string/Menu"
-        android:textColor="@android:color/background_light"
+        android:textColor="@id/ondertitel"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

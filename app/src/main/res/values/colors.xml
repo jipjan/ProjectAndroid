@@ -8,5 +8,6 @@
     <color name="Rood">#a80003</color>
     <color name="meetMijAchtergrond">#ffca28</color>
     <color name="metingen">#81e70a</color>
+    <color name="TransparentButton">#1e0779c9</color>
 
 </resources>

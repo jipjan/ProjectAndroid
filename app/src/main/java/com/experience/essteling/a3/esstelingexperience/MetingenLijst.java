@@ -57,8 +57,6 @@ public class MetingenLijst extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        lv_oude_metingen_lijst_list.setAdapter(new LijstAdapter(getApplicationContext(), attracties));
-
-
+        //lv_oude_metingen_lijst_list.setAdapter(new LijstAdapter(attracties));
     }
 }

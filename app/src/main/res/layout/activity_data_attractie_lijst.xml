@@ -6,19 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.experience.essteling.a3.esstelingexperience.DataAttractieLijst">
 
-    <Button
-        android:id="@+id/btn_data_attractie_lijst_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/transparent"
-        android:text="@string/Menu"
-        android:textColor="@id/titel1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/tv_data_attractie_lijst_attractie"
         android:layout_width="127dp"
@@ -27,7 +14,6 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="35dp"
         android:fontFamily="sans-serif-smallcaps"
         android:text="@string/NaamAttractie"
         android:textAllCaps="true"
@@ -36,7 +22,11 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_data_attractie_lijst_menu" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/lv_metingen_lijstAttracties"
+        app:layout_constraintVertical_bias="0.299" />
 
     <ImageView
         android:id="@+id/im_data_attractie_lijst_attractie"
@@ -50,21 +40,24 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_data_attractie_lijst_attractie"
         app:srcCompat="@android:color/background_dark"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
-
-    <ListView
-        android:id="@+id/listv_data_attractie_lijst_datums"
-        android:layout_width="373dp"
-        android:layout_height="238dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="5dp"
+        app:layout_constraintVertical_bias="0.002" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lv_metingen_lijstAttracties"
+        android:layout_width="match_parent"
+        android:layout_height="355dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/im_data_attractie_lijst_attractie"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>

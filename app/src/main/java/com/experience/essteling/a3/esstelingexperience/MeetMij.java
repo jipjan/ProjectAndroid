@@ -16,14 +16,6 @@ public class MeetMij extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meet_mij);
 
-        btn_meet_mij_menu = (Button) findViewById(R.id.btn_meet_mij_menu);
-        btn_meet_mij_menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),Menu.class);
-                startActivity(i);
-            }
-        });
 
         btn_meet_mij_stop = (Button) findViewById(R.id.btn_meet_mij_stop);
         btn_meet_mij_stop.setOnClickListener(new View.OnClickListener() {

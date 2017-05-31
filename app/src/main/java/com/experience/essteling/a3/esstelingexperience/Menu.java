@@ -48,6 +48,7 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), MeetMijLijst.class);
+                i.putExtra("FROM", "meetmij");
                 startActivity(i);
             }
         });

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.experience.essteling.a3.esstelingexperience.AttractieMetingSpec">
 
+<<<<<<< Updated upstream
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="1000dp"
@@ -27,19 +28,22 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+=======
+>>>>>>> Stashed changes
     <TextView
         android:id="@+id/tv_attractie_meting_spec_naamAttractie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="13dp"
         android:text="@string/NaamAttractie"
         android:textColor="@color/cardview_light_background"
         android:textSize="30sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_attractie_meting_spec_menu" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="71dp"
+        app:layout_constraintHorizontal_bias="0.502" />
 
     <ImageView
         android:id="@+id/im_meeting_attractie"
@@ -79,7 +83,7 @@
         android:text="@string/Meetmij"
         android:textColor="@android:color/background_dark"
         android:textSize="10sp"
-        app:layout_constraintHorizontal_bias="0.793"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintLeft_toRightOf="@+id/btn_attractie_meting_spec_delen"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_attractie_meting_spec_naamAttractie" />
@@ -95,7 +99,7 @@
         android:text="@string/Verwijderen"
         android:textColor="@android:color/background_dark"
         android:textSize="10sp"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.552"
         app:layout_constraintLeft_toRightOf="@+id/im_meeting_attractie"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_attractie_meting_spec_delen" />

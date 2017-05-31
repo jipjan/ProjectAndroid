@@ -1,19 +1,11 @@
 package com.experience.essteling.a3.esstelingexperience;
 
-import android.content.Context;
-import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,32 +14,32 @@ import java.util.List;
  * Created by Lois Gussenhoven on 18-5-2017.
  */
 
-public class LijstAdapter extends RecyclerView.Adapter<LijstAdapter.LijstViewHolder> {
+public class LijstAdapterMetingen extends RecyclerView.Adapter<LijstAdapterMetingen.LijstViewHolder> {
 
-    private List<Attractie> contactList;
+    private List<Attractie> attractieList;
 
-    public LijstAdapter(ArrayList<Attractie> contactList) {
-        this.contactList = contactList;
+    public LijstAdapterMetingen(ArrayList<Attractie> attractieList) {
+        this.attractieList = attractieList;
 
     }
 
     @Override
     public int getItemCount() {
-        return contactList.size();
+        return attractieList.size();
     }
 
     @Override
-    public void onBindViewHolder(LijstViewHolder contactViewHolder, int i) {
-        Attractie ci = contactList.get(i);
-        contactViewHolder.vName.setText(ci.getNaam());
-        contactViewHolder.vIcon.setImageResource(ci.getImage());;
+    public void onBindViewHolder(LijstViewHolder attractieViewHolder, int i) {
+        Attractie ci = attractieList.get(i);
+        attractieViewHolder.vName.setText(ci.getNaam());
+        attractieViewHolder.vIcon.setImageResource(ci.getImage());
     }
 
     @Override
     public LijstViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.
                 from(viewGroup.getContext()).
-                inflate(R.layout.lijst_adapter, viewGroup, false);
+                inflate(R.layout.lijst_adapter_metingen, viewGroup, false);
 
         return new LijstViewHolder(itemView);
     }
@@ -59,9 +51,10 @@ public class LijstAdapter extends RecyclerView.Adapter<LijstAdapter.LijstViewHol
 
         public LijstViewHolder(View v) {
             super(v);
-            v.setOnClickListener(MeetMijLijst.Click);
+            v.setOnClickListener(MetingenLijst.Click);
             vName = (TextView) v.findViewById(R.id.naam);
             vIcon = (ImageView) v.findViewById(R.id.icon);
+
         }
     }
 }

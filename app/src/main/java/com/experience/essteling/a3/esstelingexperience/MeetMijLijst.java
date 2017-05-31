@@ -6,18 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class MeetMijLijst extends AppCompatActivity {
-
     ArrayList<Attractie> attracties = new ArrayList<>();
     RecyclerView lv_attracties;
-    public Button btn_meet_mij_lijst_menu;
     public static View.OnClickListener Click;
 
 
@@ -71,7 +65,7 @@ public class MeetMijLijst extends AppCompatActivity {
         attracties.add(new Attractie("the Force", R.drawable.achtbaan));
 
 
-        lv_attracties.setAdapter(new LijstAdapter(attracties));
+        lv_attracties.setAdapter(new LijstAdapterMeetMij(attracties));
 
 
     }

@@ -17,7 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MeetMij" />
+
+        <activity android:name=".MeetMij"
+        android:theme="@style/AppTheme"/>
+
         <activity android:name=".MeetMijLijst"
             android:parentActivityName=".Menu"
             android:theme="@style/AppTheme">
@@ -25,8 +28,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.experience.essteling.a3.esstelingexperience.Menu" />
         </activity>
-        <activity android:name=".DataAttractieLijst" />
-        <activity android:name=".AttractieMetingSpec" />
+        <activity android:name=".DataAttractieLijst"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".AttractieMetingSpec"
+            android:theme="@style/AppTheme"/>
         <activity android:name=".MetingenLijst"
             android:parentActivityName=".Menu"
             android:theme="@style/AppTheme">

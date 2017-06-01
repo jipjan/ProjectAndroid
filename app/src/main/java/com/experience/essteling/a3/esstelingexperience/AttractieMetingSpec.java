@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class AttractieMetingSpec extends AppCompatActivity {
-    public Button btn_attractie_meting_spec_menu;
     public Button btn_attractie_meting_spec_delen;
     public Button btn_attractie_meting_spec_meetmij;
     public Button btn_attractie_meting_spec_verwijderen;
@@ -22,15 +21,8 @@ public class AttractieMetingSpec extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attractie_meting_spec);
 
-
-        btn_attractie_meting_spec_menu = (Button) findViewById(R.id.btn_attractie_meting_spec_menu);
-        btn_attractie_meting_spec_menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), Menu.class);
-                startActivity(i);
-            }
-        });
+        setTitle("Metingen");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btn_attractie_meting_spec_delen = (Button) findViewById(R.id.btn_attractie_meting_spec_delen);
         btn_attractie_meting_spec_delen.setOnClickListener(new View.OnClickListener(){

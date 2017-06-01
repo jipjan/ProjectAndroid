@@ -13,6 +13,8 @@ public class DataAttractieLijst extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_attractie_lijst);
 
+        setTitle("Metingen");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
 }

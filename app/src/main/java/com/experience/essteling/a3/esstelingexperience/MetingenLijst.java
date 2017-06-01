@@ -47,7 +47,7 @@ public class MetingenLijst extends AppCompatActivity {
         attracties.add(new Attractie("4D-film",R.drawable.movie));
         attracties.add(new Attractie("Bobslee",R.drawable.bobslee));
         attracties.add(new Attractie("Doolhof",R.drawable.doolhof));
-        attracties.add(new Attractie("Botsauto's",R.drawable.bobslee));
+        attracties.add(new Attractie("Botsauto's",R.drawable.botsautos));
         attracties.add(new Attractie("Rupsje blij",R.drawable.rupsje));
         attracties.add(new Attractie("Spookhuis,Dracula",R.drawable.spookhuis));
         attracties.add(new Attractie("Klimmuur",R.drawable.klimmuur));

@@ -4,30 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#a3deff"
     tools:context="com.experience.essteling.a3.esstelingexperience.AttractieMetingSpec">
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@color/meetMijAchtergrond" />
-
-    <Button
-        android:id="@+id/btn_attractie_meting_spec_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/transparent"
-        android:text="@string/Menu"
-        android:textColor="@color/cardview_light_background"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:color/transparent" />
 
     <TextView
         android:id="@+id/tv_attractie_meting_spec_naamAttractie"
@@ -44,7 +34,10 @@
         android:layout_marginTop="71dp"
         app:layout_constraintHorizontal_bias="0.502"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/im_meeting_attractie"
@@ -68,51 +61,70 @@
         android:id="@+id/btn_attractie_meting_spec_delen"
         android:layout_width="100dp"
         android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="27dp"
+        android:layout_marginRight="8dp"
         android:layout_marginStart="27dp"
         android:layout_marginTop="8dp"
-        android:background="@color/TransparantButton2"
+        android:background="@color/TransparentButton"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="@string/Delen"
         android:textColor="@android:color/background_dark"
-        android:textSize="10sp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toRightOf="@+id/im_meeting_attractie"
-        app:layout_constraintTop_toBottomOf="@+id/tv_attractie_meting_spec_naamAttractie" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_attractie_meting_spec_naamAttractie"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btn_attractie_meting_spec_meetmij"
         android:layout_width="100dp"
         android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="3dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="3dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@color/TransparantButton2"
+        android:background="@color/TransparentButton"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="@string/Meetmij"
         android:textColor="@android:color/background_dark"
-        android:textSize="10sp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_attractie_meting_spec_verwijderen"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintLeft_toRightOf="@+id/btn_attractie_meting_spec_delen"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_attractie_meting_spec_naamAttractie" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_attractie_meting_spec_naamAttractie"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btn_attractie_meting_spec_verwijderen"
         android:layout_width="100dp"
         android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="5dp"
-        android:background="@color/TransparantButton2"
+        android:background="@color/TransparentButton"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="@string/Verwijderen"
         android:textColor="@android:color/background_dark"
-        android:textSize="10sp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.552"
         app:layout_constraintLeft_toRightOf="@+id/im_meeting_attractie"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_attractie_meting_spec_delen"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        app:layout_constraintVertical_bias="0.017" />
 
     <TextView
         android:id="@+id/tv_attractie_meting_spec_hoogte"
@@ -128,7 +140,10 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_attractie_meting_spec_verwijderen"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="32dp" />
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tv_attractie_meting_spec_h_gem"
@@ -136,10 +151,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
         android:text="@string/Gemiddelde"
         android:textColor="@color/cardview_light_background"
-        app:layout_constraintHorizontal_bias="0.278"
+        app:layout_constraintHorizontal_bias="0.281"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_attractie_meting_spec_hoogte"
@@ -160,7 +175,10 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_attractie_meting_spec_h_gem"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="32dp" />
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/im_meeting_gr_h"
@@ -168,13 +186,15 @@
         android:layout_height="60dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="7dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_attractie_meting_spec_h_max"
         app:srcCompat="@mipmap/ic_launcher"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_attractie_meting_spec_snelheid" />
 
     <TextView
         android:id="@+id/tv_attractie_meting_spec_snelheid"
@@ -182,15 +202,15 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="32dp"
-        android:layout_marginTop="24dp"
         android:text="@string/Snelheid"
         android:textColor="@color/cardview_light_background"
-        app:layout_constraintHorizontal_bias="0.254"
+        app:layout_constraintHorizontal_bias="0.251"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/im_meeting_gr_h"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="32dp" />
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="144dp" />
 
     <TextView
         android:id="@+id/tv_attractie_meting_spec_s_gem"
@@ -201,7 +221,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/Gemiddelde"
         android:textColor="@color/cardview_light_background"
-        app:layout_constraintHorizontal_bias="0.278"
+        app:layout_constraintHorizontal_bias="0.281"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_attractie_meting_spec_snelheid"
@@ -250,12 +270,14 @@
         android:layout_marginRight="8dp"
         android:text="TextView"
         android:textColor="@color/cardview_light_background"
-        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintHorizontal_bias="0.417"
         app:layout_constraintLeft_toRightOf="@+id/tv_attractie_meting_spec_h_gem"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_attractie_meting_spec_h_gem"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="8dp" />
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_attractie_meting_spec_h_max_i" />
 
     <TextView
         android:id="@+id/tv_attractie_meting_spec_h_max_i"

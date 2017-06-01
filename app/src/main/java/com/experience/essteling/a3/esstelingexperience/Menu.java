@@ -15,7 +15,7 @@ public class Menu extends AppCompatActivity {
     public Button btn_menu_metingen;
     public ImageView imageBackground1;
     public ImageView imageBackground2;
-
+    public ImageView imageBackground3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,21 +24,30 @@ public class Menu extends AppCompatActivity {
 
 
         imageBackground1 = (ImageView) findViewById(R.id.background1);
-        imageBackground2 = (ImageView) findViewById(R.id.background2);;
+        imageBackground2 = (ImageView) findViewById(R.id.background2);
+        imageBackground3 = (ImageView) findViewById(R.id.background3);
 
         final ValueAnimator animator = ValueAnimator.ofFloat(0.0f, 1.0f);
         animator.setRepeatCount(ValueAnimator.INFINITE);
         animator.setInterpolator(new LinearInterpolator());
-        animator.setDuration(40000L);
+        animator.setDuration(1000);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 final float progress = (float) animation.getAnimatedValue();
-                final float height = imageBackground1.getHeight() - 200;
-                final float translationY = height * progress;
+                final float width = imageBackground1.getWidth() + 200;
+                final float hight = imageBackground1.getHeight();
+                final float translationX = width * progress;
+                final float translationY = hight * progress;
+                int angle = (int)Math.toDegrees(Math.sin(hight/width));
+                imageBackground1.setRotation(angle);
+                imageBackground2.setRotation(angle);
+                imageBackground3.setRotation(angle);
+                imageBackground1.setTranslationX(translationX);
                 imageBackground1.setTranslationY(translationY);
-                imageBackground2.setTranslationY(translationY - height);
+                imageBackground2.setTranslationX(translationX - width);
+                imageBackground2.setTranslationY(translationY - hight);
             }
         });
         animator.start();

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 public class MeetMij extends AppCompatActivity {
 
@@ -17,6 +18,8 @@ public class MeetMij extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meet_mij);
+        final Attractie attractie = (Attractie) getIntent().getSerializableExtra("ATTRACTIE");
+
 
         setTitle("Meet mij");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -26,9 +29,13 @@ public class MeetMij extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), AttractieMetingSpec.class);
+
+                i.putExtra("ATTRACTIE1", attractie);
+
                 startActivity(i);
             }
         });
+
 
         pb_meet_mij = (ProgressBar) findViewById(R.id.progressBar);
         btn_meet_mij_start = (Button) findViewById(R.id.btn_meet_mij_start);
@@ -42,5 +49,7 @@ public class MeetMij extends AppCompatActivity {
             }
         });
 
+        TextView tv = (TextView) findViewById(R.id.tv_meet_mij_attractie);
+        tv.setText(String.valueOf(attractie.getNaam()));
     }
 }

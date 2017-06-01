@@ -41,9 +41,6 @@ public class MetingenLijst extends AppCompatActivity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         lv_attracties.setLayoutManager(llm);
 
-
-
-
         attracties.add(new Attractie("4D-film",R.drawable.movie));
         attracties.add(new Attractie("Bobslee",R.drawable.bobslee));
         attracties.add(new Attractie("Doolhof",R.drawable.doolhof));

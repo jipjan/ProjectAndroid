@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class AttractieMetingSpec extends AppCompatActivity {
     public Button btn_attractie_meting_spec_delen;
@@ -20,6 +21,14 @@ public class AttractieMetingSpec extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attractie_meting_spec);
+
+        final Attractie attractie = (Attractie) getIntent().getSerializableExtra("ATTRACTIE1");
+
+        TextView tv = (TextView) findViewById(R.id.tv_attractie_meting_spec_naamAttractie);
+        tv.setText(String.valueOf(attractie.getNaam()));
+
+        ImageView im1 = (ImageView) findViewById(R.id.im_meeting_attractie);
+        im1.setImageResource(Integer.parseInt(String.valueOf(attractie.getImage())));
 
         setTitle("Metingen");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -42,6 +51,7 @@ public class AttractieMetingSpec extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), MeetMij.class);
+                i.putExtra("ATTRACTIE", attractie);
                 startActivity(i);
             }
         });
@@ -53,5 +63,7 @@ public class AttractieMetingSpec extends AppCompatActivity {
 //                startActivity(i);
 //            }
 //        });
+
+
     }
 }

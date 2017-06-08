@@ -14,6 +14,7 @@ import com.experience.essteling.a3.esstelingexperience.Entities.Data;
 import com.experience.essteling.a3.esstelingexperience.Entities.SensorData;
 import com.experience.essteling.a3.esstelingexperience.R;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class AttractieMetingSpec extends AppCompatActivity {
@@ -28,11 +29,25 @@ public class AttractieMetingSpec extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attractie_meting_spec);
 
+        DecimalFormat df = new DecimalFormat("#.##");
+
         final SensorData data = new SensorData((ArrayList<Data>) getIntent().getSerializableExtra("DATA"));
         final Attractie attractie = (Attractie) getIntent().getSerializableExtra("ATTRACTIE1");
 
         TextView tv = (TextView) findViewById(R.id.tv_attractie_meting_spec_naamAttractie);
         tv.setText(String.valueOf(attractie.getNaam()));
+
+        TextView tvgemh = (TextView) findViewById(R.id.tv_attractie_meting_spec_h_gem_i);
+        tvgemh.setText(String.valueOf(df.format(data.getAverageHeight())) + " meter");
+
+        TextView tvgems = (TextView) findViewById(R.id.tv_attractie_meting_spec_s_gem_i);
+        tvgems.setText(String.valueOf(df.format(data.getAverageSpeed() * 3.6)) + " km/u");
+
+        TextView tvhs = (TextView) findViewById(R.id.tv_attractie_meting_spec_s_max_i);
+        tvhs.setText(String.valueOf(df.format(data.getHighestSpeed() * 3.6)) + " km/u");
+
+        TextView tvhh = (TextView) findViewById(R.id.tv_attractie_meting_spec_h_max_i);
+        tvhh.setText(String.valueOf(df.format(data.getHighestPoint())) + " meter");
 
         ImageView im1 = (ImageView) findViewById(R.id.im_meeting_attractie);
         im1.setImageResource(Integer.parseInt(String.valueOf(attractie.getImage())));

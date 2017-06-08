@@ -22,7 +22,6 @@ public class Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-
         imageBackground1 = (ImageView) findViewById(R.id.background1);
         imageBackground2 = (ImageView) findViewById(R.id.background2);
         imageBackground3 = (ImageView) findViewById(R.id.background3);

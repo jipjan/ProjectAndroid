@@ -59,8 +59,8 @@ public class DataHandler extends AsyncTask<String, Void, String> {
         if (response != null) {
             try {
                 JSONObject obj = new JSONObject(response);
-                int speed = obj.getInt("speed");
-                int height = obj.getInt("altitude");
+                double speed = obj.getDouble("speed");
+                double height = obj.getDouble("altitude");
                 long ms = obj.getLong("millis");
                 _listener.onFinish(new SensorData(speed, height, ms));
             } catch (Exception e) {

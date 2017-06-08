@@ -8,12 +8,12 @@ import java.util.Date;
 
 public class SensorData {
     final long Time;
-    final int Speed;
-    final int Height;
+    final double Speed;
+    final double Height;
 
-    public SensorData(int speed, int height, long ms) {
+    public SensorData(double speed, double height, long ms) {
         Time = ms;
-        Speed = speed;
+        Speed = speed < 0 ? 0 : speed;
         Height = height;
     }
 }

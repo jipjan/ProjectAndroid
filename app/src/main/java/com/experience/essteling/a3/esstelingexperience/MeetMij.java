@@ -64,6 +64,10 @@ public class MeetMij extends AppCompatActivity {
                     }
                 }
 
+                // meten tot op stop gedrukt
+                // 2x per seconde
+                // opslaan in een nieuwe lijst die onderdeel wordt van de sensordataattractie
+
                 SensorDataList list = new SensorDataList();
 
                 DataHandler d = new DataHandler(list, new IDataListener() {
@@ -77,7 +81,6 @@ public class MeetMij extends AppCompatActivity {
                     }
                 });
                 d.execute();
-
                 btn_meet_mij_start.setEnabled(false);
                 btn_meet_mij_stop.setEnabled(true);
                 pb_meet_mij.setVisibility(View.VISIBLE);

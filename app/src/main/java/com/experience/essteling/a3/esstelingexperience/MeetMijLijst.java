@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import java.text.Collator;
 import java.util.ArrayList;
 
 public class MeetMijLijst extends AppCompatActivity {
@@ -63,6 +64,7 @@ public class MeetMijLijst extends AppCompatActivity {
         attracties.add(new Attractie("Wilde leeuw",R.drawable.leeuw));
         attracties.add(new Attractie("Jungle",R.drawable.jungle));
         attracties.add(new Attractie("the Force", R.drawable.achtbaan));
+
 
 
         lv_attracties.setAdapter(new LijstAdapterMeetMij(attracties));

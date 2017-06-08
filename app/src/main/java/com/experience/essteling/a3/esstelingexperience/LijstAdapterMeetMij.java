@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -52,7 +53,9 @@ public class LijstAdapterMeetMij extends RecyclerView.Adapter<LijstAdapterMeetMi
             vName = (TextView) v.findViewById(R.id.naam);
             vIcon = (ImageView) v.findViewById(R.id.icon);
 
+
         }
+
     }
 }
 

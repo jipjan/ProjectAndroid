@@ -30,14 +30,14 @@ public class LijstAdapterMeetMij extends RecyclerView.Adapter<LijstAdapterMeetMi
         Attractie ci = attractieList.get(i);
         attractieViewHolder.vName.setText(ci.getNaam());
         attractieViewHolder.vIcon.setImageResource(ci.getImage());
-        attractieViewHolder.soort.setText(ci.getSoort());
+        attractieViewHolder.vSoort.setText(ci.getSoort());
     }
 
     @Override
     public LijstViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.
                 from(viewGroup.getContext()).
-                inflate(R.layout.lijst_adapter_metingen, viewGroup, false);
+                inflate(R.layout.lijst_adapter_meetmij, viewGroup, false);
 
         return new LijstViewHolder(itemView);
     }
@@ -45,15 +45,14 @@ public class LijstAdapterMeetMij extends RecyclerView.Adapter<LijstAdapterMeetMi
     public class LijstViewHolder extends RecyclerView.ViewHolder {
         protected TextView vName;
         protected ImageView vIcon;
-        protected TextView soort;
+        protected TextView vSoort;
 
         public LijstViewHolder(View v) {
             super(v);
             v.setOnClickListener(MeetMijLijst.Click);
             vName = (TextView) v.findViewById(R.id.naam);
             vIcon = (ImageView) v.findViewById(R.id.icon);
-            soort = (TextView) v.findViewById(R.id.soort);
-
+            vSoort = (TextView) v.findViewById(R.id.soort);
         }
     }
 }

@@ -9,6 +9,8 @@ import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.experience.essteling.a3.esstelingexperience.Entities.SensorDataAttractie;
+import com.experience.essteling.a3.esstelingexperience.Helpers.SaveLoad;
 import com.experience.essteling.a3.esstelingexperience.R;
 
 public class Menu extends AppCompatActivity {
@@ -24,6 +26,7 @@ public class Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        readItems();
 
         imageBackground1 = (ImageView) findViewById(R.id.background1);
         imageBackground2 = (ImageView) findViewById(R.id.background2);
@@ -72,5 +75,11 @@ public class Menu extends AppCompatActivity {
                 startActivity(i);
             }
         });
+    }
+
+    private void readItems() {
+        SensorDataAttractie items = SaveLoad.load(getApplicationContext(), "Metingen");
+        if (items != null)
+            items.ITEMS = items;
     }
 }

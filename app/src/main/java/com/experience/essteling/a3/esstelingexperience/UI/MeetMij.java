@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.experience.essteling.a3.esstelingexperience.DataRetriever.DataHandler;
 import com.experience.essteling.a3.esstelingexperience.DataRetriever.IDataListener;
 import com.experience.essteling.a3.esstelingexperience.Entities.Attractie;
+import com.experience.essteling.a3.esstelingexperience.Entities.SensorDataAttractie;
 import com.experience.essteling.a3.esstelingexperience.R;
 import com.experience.essteling.a3.esstelingexperience.Entities.SensorData;
 import com.experience.essteling.a3.esstelingexperience.Entities.SensorDataList;
@@ -64,6 +65,7 @@ public class MeetMij extends AppCompatActivity {
 
                 WifiConnection.Connect(getApplicationContext());
 
+                // TODO: Dit in een task systeem
                 while (!WifiConnection.isConnected(getApplication())) {
                     try {
                         Thread.sleep(250);
@@ -76,7 +78,8 @@ public class MeetMij extends AppCompatActivity {
                 // 2x per seconde
                 // opslaan in een nieuwe lijst die onderdeel wordt van de sensordataattractie
 
-                SensorDataList list = new SensorDataList();
+
+                SensorDataList list = SensorDataAttractie.ITEMS.getListOrNew()
 
                 DataHandler d = new DataHandler(list, new IDataListener() {
                     @Override
@@ -92,9 +95,6 @@ public class MeetMij extends AppCompatActivity {
                 btn_meet_mij_start.setEnabled(false);
                 btn_meet_mij_stop.setEnabled(true);
                 pb_meet_mij.setVisibility(View.VISIBLE);
-
-
-
             }
         });
 

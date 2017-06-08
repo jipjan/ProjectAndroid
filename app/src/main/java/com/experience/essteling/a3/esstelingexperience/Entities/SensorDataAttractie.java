@@ -8,5 +8,17 @@ import java.util.HashMap;
  */
 
 public class SensorDataAttractie extends HashMap<Integer, SensorDataList> implements Serializable {
+    public static SensorDataAttractie ITEMS = new SensorDataAttractie();
 
+    private SensorDataAttractie() {}
+
+    public SensorDataList getListOrNew(int id) {
+        if (containsKey(id)) {
+            return get(id);
+        } else {
+            SensorDataList data = new SensorDataList();
+            put(id, data);
+            return data;
+        }
+    }
 }

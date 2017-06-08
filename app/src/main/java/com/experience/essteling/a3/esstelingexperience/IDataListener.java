@@ -5,6 +5,6 @@ package com.experience.essteling.a3.esstelingexperience;
  */
 
 public interface IDataListener {
-    void onFinish();
+    void onFinish(SensorData meting);
     void onError();
 }

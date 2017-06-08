@@ -1,7 +1,9 @@
 package com.experience.essteling.a3.esstelingexperience;
 
 import android.content.Context;
+import android.net.wifi.SupplicantState;
 import android.net.wifi.WifiConfiguration;
+import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 
 import java.util.List;
@@ -46,5 +48,19 @@ public class WifiConnection {
 
     public static void Disconnect(Context c) {
         Connect(c, false);
+    }
+
+    public static boolean isConnected(Context c) {
+        WifiManager wifiManager = (WifiManager) c.getSystemService(Context.WIFI_SERVICE);
+        WifiInfo wifiInfo;
+
+        wifiInfo = wifiManager.getConnectionInfo();
+        if (wifiInfo.getSupplicantState() == SupplicantState.COMPLETED) {
+            String name = wifiInfo.getSSID();
+            String ourName = "\"" + WifiName + "\"";
+
+            return name.equals(ourName);
+        }
+        return false;
     }
 }

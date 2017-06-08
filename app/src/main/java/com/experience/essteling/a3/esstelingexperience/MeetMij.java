@@ -36,6 +36,7 @@ public class MeetMij extends AppCompatActivity {
                 vibrator.vibrate(1000); // 5000 miliseconds = 5 seconds
                 pb_meet_mij.setVisibility(View.VISIBLE);
                 i.putExtra("ATTRACTIE1", attractie);
+                WifiConnection.Disconnect(getApplicationContext());
 
                 startActivity(i);
             }
@@ -53,9 +54,35 @@ public class MeetMij extends AppCompatActivity {
                 Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(1000); // 5000 miliseconds = 5 seconds
 
+                WifiConnection.Connect(getApplicationContext());
+
+                while (!WifiConnection.isConnected(getApplication())) {
+                    try {
+                        Thread.sleep(250);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                SensorDataList list = new SensorDataList();
+
+                DataHandler d = new DataHandler(list, new IDataListener() {
+                    @Override
+                    public void onFinish(SensorData meting) {
+                        System.out.println("Something went right!");
+                    }
+                    @Override
+                    public void onError() {
+                        System.out.println("Errors everywhere!");
+                    }
+                });
+                d.execute();
+
                 btn_meet_mij_start.setEnabled(false);
                 btn_meet_mij_stop.setEnabled(true);
                 pb_meet_mij.setVisibility(View.VISIBLE);
+
+
 
             }
         });

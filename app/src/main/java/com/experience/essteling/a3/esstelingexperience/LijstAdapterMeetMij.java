@@ -6,9 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -52,11 +50,11 @@ public class LijstAdapterMeetMij extends RecyclerView.Adapter<LijstAdapterMeetMi
             v.setOnClickListener(MeetMijLijst.Click);
             vName = (TextView) v.findViewById(R.id.naam);
             vIcon = (ImageView) v.findViewById(R.id.icon);
-
-
         }
 
     }
+
+
 }
 
 

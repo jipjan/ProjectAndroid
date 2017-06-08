@@ -5,8 +5,13 @@ import android.os.AsyncTask;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
+import java.net.URLConnection;
 
 /**
  * Created by Bobsk on 8-6-2017.
@@ -15,39 +20,52 @@ import java.net.URL;
 public class DataHandler extends AsyncTask<String, Void, String> {
 
     private IDataListener _listener;
-    private SensorDataList _list;
 
-    public DataHandler(SensorDataList list, IDataListener listener) { _listener = listener; _list = list; }
+    public DataHandler(SensorDataList list, IDataListener listener) { _listener = listener; }
+
+
 
     @Override
     protected String doInBackground(String... params) {
-        StringBuilder response = new StringBuilder();
-
-        try {
-            URL url = new URL("http://192.168.4.1");
-            BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
-            String read;
-            while ((read = reader.readLine()) != null)
-                response.append(read);
-        } catch (Exception ex) {
-            ex.printStackTrace();
+        int retryCounter = 0;
+        String output;
+        while (retryCounter < 10) {
+            try {
+                output = dataReader();
+                if (output != null)
+                    return output;
+            } catch (Exception e) {
+                retryCounter++;
+                MyThread.sleep(500);
+            }
         }
+        return null;
+    }
 
+    private String dataReader() throws IOException, URISyntaxException {
+        StringBuilder response = new StringBuilder();
+        URI uri = new URI("http://192.168.4.1:8080");
+        URL url = uri.toURL();
+        URLConnection urlC = url.openConnection();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(urlC.getInputStream()));
+        String read;
+        while ((read = reader.readLine()) != null)
+            response.append(read);
         return response.toString();
     }
 
+    @Override
     protected void onPostExecute(String response) {
         if (response != null) {
             try {
                 JSONObject obj = new JSONObject(response);
-                int speed = obj.getInt("snelheid");
+                int speed = obj.getInt("speed");
                 int height = obj.getInt("altitude");
                 long ms = obj.getLong("millis");
-
-                _list.add(new SensorData(speed, height, ms));
-                _listener.onFinish();
+                _listener.onFinish(new SensorData(speed, height, ms));
             } catch (Exception e) {
                 e.printStackTrace();
+                _listener.onError();
             }
         } else {
             _listener.onError();

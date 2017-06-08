@@ -9,7 +9,7 @@ import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.experience.essteling.a3.esstelingexperience.Entities.SensorDataAttractie;
+import com.experience.essteling.a3.esstelingexperience.Entities.MetingenData;
 import com.experience.essteling.a3.esstelingexperience.Helpers.SaveLoad;
 import com.experience.essteling.a3.esstelingexperience.R;
 
@@ -78,7 +78,7 @@ public class Menu extends AppCompatActivity {
     }
 
     private void readItems() {
-        SensorDataAttractie items = SaveLoad.load(getApplicationContext(), "Metingen");
+        MetingenData items = SaveLoad.load(getApplicationContext(), "Metingen");
         if (items != null)
             items.ITEMS = items;
     }

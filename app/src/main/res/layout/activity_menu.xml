@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#a3deff"
 
-    tools:context="com.experience.essteling.a3.esstelingexperience.Menu">
+    tools:context="com.experience.essteling.a3.esstelingexperience.UI.Menu">
 
     <ImageView
         android:id="@+id/imageView"

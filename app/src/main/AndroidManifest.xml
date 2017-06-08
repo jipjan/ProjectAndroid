@@ -14,7 +14,7 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Menu"
+        <activity android:name=".UI.Menu"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -24,51 +24,51 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MeetMij"
-            android:parentActivityName=".MetingenLijst"
+        <activity android:name=".UI.MeetMij"
+            android:parentActivityName=".UI.MetingenLijst"
         android:theme="@style/AppTheme"
             android:screenOrientation="portrait">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.experience.essteling.a3.esstelingexperience.MeetMijLijst" />
+            android:value="com.experience.essteling.a3.esstelingexperience.UI.MeetMijLijst" />
     </activity>
 
-        <activity android:name=".MeetMijLijst"
-            android:parentActivityName=".Menu"
+        <activity android:name=".UI.MeetMijLijst"
+            android:parentActivityName=".UI.Menu"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.experience.essteling.a3.esstelingexperience.Menu" />
+                android:value="com.experience.essteling.a3.esstelingexperience.UI.Menu" />
         </activity>
 
-        <activity android:name=".DataAttractieLijst"
-            android:parentActivityName=".MetingenLijst"
+        <activity android:name=".UI.DataAttractieLijst"
+            android:parentActivityName=".UI.MetingenLijst"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait">
             <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.experience.essteling.a3.esstelingexperience.MetingenLijst" />
+            android:value="com.experience.essteling.a3.esstelingexperience.UI.MetingenLijst" />
         </activity>
 
 
-         <activity android:name=".AttractieMetingSpec"
-             android:parentActivityName=".MeetMijLijst"
+         <activity android:name=".UI.AttractieMetingSpec"
+             android:parentActivityName=".UI.MeetMijLijst"
             android:theme="@style/AppTheme"
              android:screenOrientation="portrait">
             <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.experience.essteling.a3.esstelingexperience.MeetMijLijst" />
+                android:value="com.experience.essteling.a3.esstelingexperience.UI.MeetMijLijst" />
           </activity>
 
 
-        <activity android:name=".MetingenLijst"
-            android:parentActivityName=".Menu"
+        <activity android:name=".UI.MetingenLijst"
+            android:parentActivityName=".UI.Menu"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.experience.essteling.a3.esstelingexperience.Menu" />
+                android:value="com.experience.essteling.a3.esstelingexperience.UI.Menu" />
         </activity>
 
     </application>

@@ -1,4 +1,4 @@
-package com.experience.essteling.a3.esstelingexperience;
+package com.experience.essteling.a3.esstelingexperience.Entities;
 
 import java.util.Date;
 

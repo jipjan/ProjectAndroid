@@ -1,13 +1,16 @@
-package com.experience.essteling.a3.esstelingexperience;
+package com.experience.essteling.a3.esstelingexperience.DataRetriever;
 
 import android.os.AsyncTask;
+
+import com.experience.essteling.a3.esstelingexperience.Helpers.MyThread;
+import com.experience.essteling.a3.esstelingexperience.Entities.SensorData;
+import com.experience.essteling.a3.esstelingexperience.Entities.SensorDataList;
 
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;

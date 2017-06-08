@@ -1,36 +1,35 @@
-package com.experience.essteling.a3.esstelingexperience;
+package com.experience.essteling.a3.esstelingexperience.UI;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import org.w3c.dom.Attr;
+import com.experience.essteling.a3.esstelingexperience.Adapters.LijstAdapterMetingen;
+import com.experience.essteling.a3.esstelingexperience.Entities.Attractie;
+import com.experience.essteling.a3.esstelingexperience.R;
+import com.experience.essteling.a3.esstelingexperience.UI.DataAttractieLijst;
 
-import java.text.Collator;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
-public class MeetMijLijst extends AppCompatActivity {
-    ArrayList<Attractie> attracties = new ArrayList<>();
+public class MetingenLijst extends AppCompatActivity {
     RecyclerView lv_attracties;
+    ArrayList<Attractie> attracties = new ArrayList<>();
     public static View.OnClickListener Click;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_meet_mij_lijst);
+        setContentView(R.layout.activity_metingen_lijst);
 
         Click = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final int position = lv_attracties.getChildLayoutPosition(v);
                 Attractie attractie = attracties.get(position);
-                Intent intent = new Intent(getApplicationContext(), MeetMij.class);
+                Intent intent = new Intent(getApplicationContext(), DataAttractieLijst.class);
 
                 intent.putExtra("ATTRACTIE", attractie);
 
@@ -38,15 +37,14 @@ public class MeetMijLijst extends AppCompatActivity {
             }
         };
 
-        setTitle("Meet Mij");
+        setTitle("Metingen");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        lv_attracties = (RecyclerView) findViewById(R.id.lv_meet_mij_lijst_lijstAttracties);
+        lv_attracties = (RecyclerView) findViewById(R.id.lv_metingen_lijstAttracties);
         lv_attracties.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         lv_attracties.setLayoutManager(llm);
-
 
         attracties.add(new Attractie("4D-film",R.drawable.movie, "Show",1));
         attracties.add(new Attractie("Bobslee",R.drawable.bobslee, "Attractie",2));
@@ -70,16 +68,7 @@ public class MeetMijLijst extends AppCompatActivity {
         attracties.add(new Attractie("the Force", R.drawable.achtbaan,"Attractie",20));
 
 
+        lv_attracties.setAdapter(new LijstAdapterMetingen(attracties));
 
-        lv_attracties.setAdapter(new LijstAdapterMeetMij(attracties));
-
-        if (attracties.size() > 0) {
-            Collections.sort(attracties, new Comparator<Attractie>() {
-                @Override
-                public int compare(final Attractie object1, final Attractie object2) {
-                    return object1.getNaam().compareTo(object2.getNaam());
-                }
-            });
-        }
     }
 }

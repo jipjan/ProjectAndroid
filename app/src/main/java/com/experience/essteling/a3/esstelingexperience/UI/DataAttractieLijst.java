@@ -1,11 +1,12 @@
-package com.experience.essteling.a3.esstelingexperience;
+package com.experience.essteling.a3.esstelingexperience.UI;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.experience.essteling.a3.esstelingexperience.Entities.Attractie;
+import com.experience.essteling.a3.esstelingexperience.R;
 
 public class DataAttractieLijst extends AppCompatActivity {
 

@@ -1,8 +1,9 @@
-package com.experience.essteling.a3.esstelingexperience;
+package com.experience.essteling.a3.esstelingexperience.UI;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.experience.essteling.a3.esstelingexperience.R;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.GridLabelRenderer;
 import com.jjoe64.graphview.LegendRenderer;

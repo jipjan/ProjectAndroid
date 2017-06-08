@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#a3deff"
-    tools:context="com.experience.essteling.a3.esstelingexperience.DataAttractieLijst">
+    tools:context="com.experience.essteling.a3.esstelingexperience.UI.DataAttractieLijst">
 
     <TextView
         android:id="@+id/tv_data_attractie_lijst_attractie"

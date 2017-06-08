@@ -1,4 +1,4 @@
-package com.experience.essteling.a3.esstelingexperience;
+package com.experience.essteling.a3.esstelingexperience.Entities;
 
 import java.io.Serializable;
 
@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by Lois Gussenhoven on 18-5-2017.
  */
 
-public class Attractie implements Serializable{
+public class Attractie implements Serializable {
     private String naam;
     private String soort;
     private int id;
@@ -26,7 +26,6 @@ public class Attractie implements Serializable{
         this.soort = soort;
         this.id = id;
     }
-
 
     public String getNaam() {
         return naam;

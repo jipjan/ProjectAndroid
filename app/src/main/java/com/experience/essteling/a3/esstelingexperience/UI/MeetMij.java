@@ -1,4 +1,4 @@
-package com.experience.essteling.a3.esstelingexperience;
+package com.experience.essteling.a3.esstelingexperience.UI;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.experience.essteling.a3.esstelingexperience.DataRetriever.DataHandler;
+import com.experience.essteling.a3.esstelingexperience.DataRetriever.IDataListener;
+import com.experience.essteling.a3.esstelingexperience.Entities.Attractie;
+import com.experience.essteling.a3.esstelingexperience.R;
+import com.experience.essteling.a3.esstelingexperience.Entities.SensorData;
+import com.experience.essteling.a3.esstelingexperience.Entities.SensorDataList;
+import com.experience.essteling.a3.esstelingexperience.Helpers.WifiConnection;
 
 public class MeetMij extends AppCompatActivity {
 

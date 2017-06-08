@@ -12,7 +12,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#a3deff"
-    tools:context="com.experience.essteling.a3.esstelingexperience.AttractieMetingSpec">
+    tools:context="com.experience.essteling.a3.esstelingexperience.UI.AttractieMetingSpec">
 
     <ImageView
         android:id="@+id/imageView3"

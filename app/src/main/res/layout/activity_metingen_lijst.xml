@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#c5dcf7"
-    tools:context="com.experience.essteling.a3.esstelingexperience.MetingenLijst">
+    tools:context="com.experience.essteling.a3.esstelingexperience.UI.MetingenLijst">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/lv_metingen_lijstAttracties"

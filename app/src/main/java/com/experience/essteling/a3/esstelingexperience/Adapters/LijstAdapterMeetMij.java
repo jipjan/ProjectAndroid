@@ -1,4 +1,4 @@
-package com.experience.essteling.a3.esstelingexperience;
+package com.experience.essteling.a3.esstelingexperience.Adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,6 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.experience.essteling.a3.esstelingexperience.Entities.Attractie;
+import com.experience.essteling.a3.esstelingexperience.UI.MeetMijLijst;
+import com.experience.essteling.a3.esstelingexperience.R;
+
 import java.util.ArrayList;
 import java.util.List;
 

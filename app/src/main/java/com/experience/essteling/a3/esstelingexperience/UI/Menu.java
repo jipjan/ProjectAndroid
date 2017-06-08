@@ -1,4 +1,4 @@
-package com.experience.essteling.a3.esstelingexperience;
+package com.experience.essteling.a3.esstelingexperience.UI;
 
 import android.animation.ValueAnimator;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.experience.essteling.a3.esstelingexperience.R;
 
 public class Menu extends AppCompatActivity {
 

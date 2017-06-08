@@ -1,4 +1,4 @@
-package com.experience.essteling.a3.esstelingexperience;
+package com.experience.essteling.a3.esstelingexperience.Helpers;
 
 /**
  * Created by Lois Gussenhoven on 8-6-2017.

@@ -1,12 +1,13 @@
 package com.experience.essteling.a3.esstelingexperience.Entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by Bobsk on 8-6-2017.
  */
 
-public class Data {
+public class Data implements Serializable {
     final long Time;
     final double Speed;
     final double Height;

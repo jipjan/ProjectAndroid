@@ -45,13 +45,14 @@ public class MeetMij extends AppCompatActivity {
             public void onClick(View view) {
                 if (sensorData == null) return;
 
-                sensorData.stop();
+                SensorData data = sensorData.stop();
 
                 Intent i = new Intent(getApplicationContext(), AttractieMetingSpec.class);
                 Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(1000); // 5000 miliseconds = 5 seconds
                 pb_meet_mij.setVisibility(View.VISIBLE);
                 i.putExtra("ATTRACTIE1", attractie);
+                i.putExtra("DATA", data);
                 WifiConnection.Disconnect(getApplicationContext());
 
                 startActivity(i);

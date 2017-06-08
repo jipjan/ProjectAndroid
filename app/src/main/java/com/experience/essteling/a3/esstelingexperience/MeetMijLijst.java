@@ -48,26 +48,27 @@ public class MeetMijLijst extends AppCompatActivity {
         lv_attracties.setLayoutManager(llm);
 
 
-        attracties.add(new Attractie("4D-film", R.drawable.movie));
-        attracties.add(new Attractie("Bobslee", R.drawable.bobslee));
-        attracties.add(new Attractie("Doolhof", R.drawable.doolhof));
-        attracties.add(new Attractie("Botsauto's", R.drawable.botsautos));
-        attracties.add(new Attractie("Rupsje blij", R.drawable.rupsje));
-        attracties.add(new Attractie("Spookhuis", R.drawable.spookhuis));
-        attracties.add(new Attractie("Klimmuur", R.drawable.klimmuur));
-        attracties.add(new Attractie("Uitkijktoren", R.drawable.uitkijktoren));
-        attracties.add(new Attractie("Zweefmolen", R.drawable.zweefmolen));
-        attracties.add(new Attractie("Megatron", R.drawable.achtbaana));
-        attracties.add(new Attractie("Mini trein", R.drawable.mini_trein));
-        attracties.add(new Attractie("Silver rush", R.drawable.silver));
-        attracties.add(new Attractie("Reuzenrad", R.drawable.reuzenras));
-        attracties.add(new Attractie("You Pirate!", R.drawable.piraat));
-        attracties.add(new Attractie("Cobra", R.drawable.cobr));
-        attracties.add(new Attractie("Kabouterrit", R.drawable.kabouter));
-        attracties.add(new Attractie("Treintje", R.drawable.treintjes));
-        attracties.add(new Attractie("Wilde leeuw", R.drawable.leeuw));
-        attracties.add(new Attractie("Jungle", R.drawable.jungle));
-        attracties.add(new Attractie("the Force", R.drawable.achtbaan));
+        attracties.add(new Attractie("4D-film",R.drawable.movie, "Show",1));
+        attracties.add(new Attractie("Bobslee",R.drawable.bobslee, "Attractie",2));
+        attracties.add(new Attractie("Doolhof",R.drawable.doolhof, "Kinder attractie",3));
+        attracties.add(new Attractie("Botsauto's",R.drawable.botsautos,"Kinder attractie",4));
+        attracties.add(new Attractie("Rupsje blij",R.drawable.rupsje,"Kinder attractie",5));
+        attracties.add(new Attractie("Spookhuis",R.drawable.spookhuis,"Kinder attractie",6));
+        attracties.add(new Attractie("Klimmuur",R.drawable.klimmuur,"Kinder attractie",7));
+        attracties.add(new Attractie("Uitkijktoren",R.drawable.uitkijktoren, "Attractie",8));
+        attracties.add(new Attractie("Zweefmolen",R.drawable.zweefmolen, "Attractie",9));
+        attracties.add(new Attractie("Megatron",R.drawable.achtbaana,"Attractie",10));
+        attracties.add(new Attractie("Mini trein",R.drawable.mini_trein,"Kinder attractie",11));
+        attracties.add(new Attractie("Silver rush",R.drawable.silver,"Attractie",12));
+        attracties.add(new Attractie("Reuzenrad",R.drawable.reuzenras, "Attractie",13));
+        attracties.add(new Attractie("You Pirate!",R.drawable.piraat, "Attractie",14));
+        attracties.add(new Attractie("Cobra",R.drawable.cobr, "Attractie",15));
+        attracties.add(new Attractie("Kabouterrit",R.drawable.kabouter,"Kinder attractie",16));
+        attracties.add(new Attractie("Treintje",R.drawable.treintjes, "Kinder attractie", 17));
+        attracties.add(new Attractie("Wilde leeuw",R.drawable.leeuw, "Attractie", 18));
+        attracties.add(new Attractie("Jungle",R.drawable.jungle,"Attractie",19));
+        attracties.add(new Attractie("the Force", R.drawable.achtbaan,"Attractie",20));
+
 
 
         lv_attracties.setAdapter(new LijstAdapterMeetMij(attracties));

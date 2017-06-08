@@ -32,8 +32,8 @@ android:layout_margin="5dp">
 
     <TextView
         android:id="@+id/naam"
-        android:layout_width="216dp"
-        android:layout_height="58dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
@@ -43,10 +43,21 @@ android:layout_margin="5dp">
         android:textColor="@id/ondertitel"
         android:textSize="18sp"
         card_view:layout_constraintBottom_toBottomOf="parent"
-        card_view:layout_constraintHorizontal_bias="0.2"
+        card_view:layout_constraintHorizontal_bias="0.208"
         card_view:layout_constraintLeft_toRightOf="@+id/icon"
         card_view:layout_constraintRight_toRightOf="parent"
-        card_view:layout_constraintTop_toTopOf="parent" />
+        card_view:layout_constraintTop_toTopOf="parent"
+        card_view:layout_constraintVertical_bias="0.235" />
+
+    <TextView
+        android:id="@+id/soort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        card_view:layout_constraintLeft_toLeftOf="@+id/naam"
+        card_view:layout_constraintTop_toBottomOf="@+id/naam" />
 
 </android.support.constraint.ConstraintLayout>
 

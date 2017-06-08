@@ -8,12 +8,25 @@ import java.io.Serializable;
 
 public class Attractie implements Serializable{
     private String naam;
+    private String soort;
+    private int id;
     private int image;
 
-    public Attractie(String naam, int image) {
+    public String getSoort() {
+        return soort;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public Attractie(String naam, int image, String soort, int id) {
         this.naam = naam;
         this.image = image;
+        this.soort = soort;
+        this.id = id;
     }
+
 
     public String getNaam() {
         return naam;
@@ -24,9 +37,11 @@ public class Attractie implements Serializable{
 
     @Override
     public String toString() {
-        return "Attractie {" +
-                "naam ='" + naam + '\'' +
-                ", imageNaam ='" + image + '\'' +
+        return "Attractie{" +
+                "naam='" + naam + '\'' +
+                ", soort='" + soort + '\'' +
+                ", id=" + id +
+                ", image=" + image +
                 '}';
     }
 }

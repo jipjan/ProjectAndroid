@@ -26,7 +26,7 @@ public class Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        readItems();
+        MetingenData.ITEMS.load(getApplicationContext());
 
         imageBackground1 = (ImageView) findViewById(R.id.background1);
         imageBackground2 = (ImageView) findViewById(R.id.background2);
@@ -75,11 +75,5 @@ public class Menu extends AppCompatActivity {
                 startActivity(i);
             }
         });
-    }
-
-    private void readItems() {
-        MetingenData items = SaveLoad.load(getApplicationContext(), "Metingen");
-        if (items != null)
-            items.ITEMS = items;
     }
 }

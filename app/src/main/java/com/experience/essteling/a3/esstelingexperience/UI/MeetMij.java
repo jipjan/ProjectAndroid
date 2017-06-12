@@ -14,10 +14,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.experience.essteling.a3.esstelingexperience.Entities.Attractie;
+import com.experience.essteling.a3.esstelingexperience.Entities.MetingenData;
 import com.experience.essteling.a3.esstelingexperience.Entities.SensorData;
 import com.experience.essteling.a3.esstelingexperience.Helpers.IThread;
 import com.experience.essteling.a3.esstelingexperience.Helpers.MyMetingThread;
 import com.experience.essteling.a3.esstelingexperience.Helpers.MyWifiThread;
+import com.experience.essteling.a3.esstelingexperience.Helpers.SaveLoad;
 import com.experience.essteling.a3.esstelingexperience.Helpers.Widget;
 import com.experience.essteling.a3.esstelingexperience.R;
 import com.experience.essteling.a3.esstelingexperience.Helpers.WifiConnection;
@@ -69,12 +71,16 @@ public class MeetMij extends AppCompatActivity {
             public void onClick(View view) {
                 if (success == null) return;
 
+                SensorData data = success.stop();
+                MetingenData.ITEMS.save(getApplicationContext());
+
                 Intent i = new Intent(getApplicationContext(), AttractieMetingSpec.class);
                 Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(1000); // 5000 miliseconds = 5 seconds
                 pb_meet_mij.setVisibility(View.VISIBLE);
                 i.putExtra("ATTRACTIE1", attractie);
-                i.putExtra("DATA", success.stop());
+                i.putExtra("DATA", data);
+
                 WifiConnection.Disconnect(getApplicationContext());
 
                 startActivity(i);

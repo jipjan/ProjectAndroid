@@ -7,16 +7,18 @@ import android.widget.TextView;
  * Created by Jaap-Jan on 12-6-2017.
  */
 
-public class MyWifiThread {
+public class MyWifiThread implements IThread {
 
-    MyMetingThread _callback;
+    IThread _success;
+    IThread _fail;
     TextView _status;
     Activity _activity;
 
     Thread _thread;
 
-    public MyWifiThread(MyMetingThread callback, Activity act, TextView status) {
-        _callback = callback;
+    public MyWifiThread(IThread success, IThread fail, Activity act, TextView status) {
+        _success = success;
+        _fail = fail;
         _activity = act;
         _status = status;
     }
@@ -34,11 +36,12 @@ public class MyWifiThread {
                     MyMetingThread.sleep(1000);
                     if (tries == 10) {
                         updateStatusText("Connectie maken mislukt, probeer opnieuw...");
+                        _fail.start();
                         return;
                     }
                 }
                 updateStatusText("Metingen aan het verzamelen...");
-                _callback.start();
+                _success.start();
             }
         });
         _thread.start();

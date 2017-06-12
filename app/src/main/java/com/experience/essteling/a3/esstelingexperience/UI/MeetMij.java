@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.experience.essteling.a3.esstelingexperience.Entities.Attractie;
 import com.experience.essteling.a3.esstelingexperience.Entities.SensorData;
+import com.experience.essteling.a3.esstelingexperience.Helpers.IThread;
 import com.experience.essteling.a3.esstelingexperience.Helpers.MyMetingThread;
 import com.experience.essteling.a3.esstelingexperience.Helpers.MyWifiThread;
 import com.experience.essteling.a3.esstelingexperience.Helpers.Widget;
@@ -94,17 +95,35 @@ public class MeetMij extends AppCompatActivity {
                 animator.start();
 
                 TextView status = Widget.find(MeetMij.this, R.id.tv_meet_mij_status);
-                MyWifiThread thread = new MyWifiThread(new MyMetingThread(attractie.getId()), MeetMij.this, status);
+                IThread success = new MyMetingThread(attractie.getId());
+                IThread fail = new IThread() {
+                    @Override
+                    public void start() {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                pb_meet_mij.setVisibility(View.INVISIBLE);
+                                swapStartStop(false);
+                                animator.end();
+                            }
+                        });
+                    }
+                };
+                MyWifiThread thread = new MyWifiThread(success, fail, MeetMij.this, status);
                 thread.start();
 
-                btn_meet_mij_start.setEnabled(false);
-                btn_meet_mij_stop.setEnabled(true);
+                swapStartStop(true);
                 pb_meet_mij.setVisibility(View.VISIBLE);
             }
         });
 
         TextView tv = (TextView) findViewById(R.id.tv_meet_mij_attractie);
         tv.setText(String.valueOf(attractie.getNaam()));
+    }
+
+    private void swapStartStop(boolean start) {
+        btn_meet_mij_start.setEnabled(!start);
+        btn_meet_mij_stop.setEnabled(start);
     }
 
     public void setSensorData(SensorData data) {

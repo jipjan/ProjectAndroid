@@ -21,7 +21,7 @@ import java.net.URLConnection;
  * Created by Lois Gussenhoven on 8-6-2017.
  */
 
-public class MyMetingThread {
+public class MyMetingThread implements IThread {
 
     private SensorData _sensorData;
     private Thread _sensorThread;

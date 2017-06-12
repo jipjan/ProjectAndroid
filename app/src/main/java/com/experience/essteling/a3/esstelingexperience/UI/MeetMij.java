@@ -13,15 +13,12 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.experience.essteling.a3.esstelingexperience.DataRetriever.DataHandler;
-import com.experience.essteling.a3.esstelingexperience.DataRetriever.IDataListener;
 import com.experience.essteling.a3.esstelingexperience.Entities.Attractie;
-import com.experience.essteling.a3.esstelingexperience.Entities.MetingenData;
 import com.experience.essteling.a3.esstelingexperience.Entities.SensorData;
-import com.experience.essteling.a3.esstelingexperience.Helpers.MyThread;
+import com.experience.essteling.a3.esstelingexperience.Helpers.MyMetingThread;
+import com.experience.essteling.a3.esstelingexperience.Helpers.MyWifiThread;
+import com.experience.essteling.a3.esstelingexperience.Helpers.Widget;
 import com.experience.essteling.a3.esstelingexperience.R;
-import com.experience.essteling.a3.esstelingexperience.Entities.Data;
-import com.experience.essteling.a3.esstelingexperience.Entities.AttractieData;
 import com.experience.essteling.a3.esstelingexperience.Helpers.WifiConnection;
 
 public class MeetMij extends AppCompatActivity {
@@ -32,7 +29,8 @@ public class MeetMij extends AppCompatActivity {
     public ImageView imageBackground1;
     public ImageView imageBackground2;
     public ImageView imageBackground3;
-    private MyThread sensorData;
+    private SensorData data;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,9 +66,7 @@ public class MeetMij extends AppCompatActivity {
         btn_meet_mij_stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (sensorData == null) return;
-
-                SensorData data = sensorData.stop();
+                if (data == null) return;
 
                 Intent i = new Intent(getApplicationContext(), AttractieMetingSpec.class);
                 Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
@@ -96,15 +92,10 @@ public class MeetMij extends AppCompatActivity {
                 Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(1000); // 5000 miliseconds = 5 seconds
                 animator.start();
-                WifiConnection.Connect(getApplicationContext());
 
-                // TODO: Dit in een task systeem
-                while (!WifiConnection.isConnected(getApplication())) {
-                    MyThread.sleep(250);
-                }
-
-                sensorData = new MyThread(attractie.getId());
-                sensorData.start();
+                TextView status = Widget.find(MeetMij.this, R.id.tv_meet_mij_status);
+                MyWifiThread thread = new MyWifiThread(new MyMetingThread(attractie.getId()), MeetMij.this, status);
+                thread.start();
 
                 btn_meet_mij_start.setEnabled(false);
                 btn_meet_mij_stop.setEnabled(true);
@@ -114,5 +105,9 @@ public class MeetMij extends AppCompatActivity {
 
         TextView tv = (TextView) findViewById(R.id.tv_meet_mij_attractie);
         tv.setText(String.valueOf(attractie.getNaam()));
+    }
+
+    public void setSensorData(SensorData data) {
+
     }
 }

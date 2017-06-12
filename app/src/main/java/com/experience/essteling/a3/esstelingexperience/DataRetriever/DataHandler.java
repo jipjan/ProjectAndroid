@@ -2,9 +2,8 @@ package com.experience.essteling.a3.esstelingexperience.DataRetriever;
 
 import android.os.AsyncTask;
 
-import com.experience.essteling.a3.esstelingexperience.Helpers.MyThread;
+import com.experience.essteling.a3.esstelingexperience.Helpers.MyMetingThread;
 import com.experience.essteling.a3.esstelingexperience.Entities.Data;
-import com.experience.essteling.a3.esstelingexperience.Entities.AttractieData;
 
 import org.json.JSONObject;
 
@@ -39,7 +38,7 @@ public class DataHandler extends AsyncTask<String, Void, String> {
                     return output;
             } catch (Exception e) {
                 retryCounter++;
-                MyThread.sleep(500);
+                MyMetingThread.sleep(500);
             }
         }
         return null;

@@ -21,14 +21,14 @@ import java.net.URLConnection;
  * Created by Lois Gussenhoven on 8-6-2017.
  */
 
-public class MyThread {
+public class MyMetingThread {
 
     private SensorData _sensorData;
     private Thread _sensorThread;
     private boolean _stop;
     private URL _url;
 
-    public MyThread(int id) {
+    public MyMetingThread(int id) {
         _sensorData = MetingenData.ITEMS.getListOrNew(id).newSensorData();
 
         try {

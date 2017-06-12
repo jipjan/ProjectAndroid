@@ -30,7 +30,7 @@ public class MeetMij extends AppCompatActivity {
     public ImageView imageBackground1;
     public ImageView imageBackground2;
     public ImageView imageBackground3;
-    private SensorData data;
+    MyMetingThread success;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,14 +67,14 @@ public class MeetMij extends AppCompatActivity {
         btn_meet_mij_stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (data == null) return;
+                if (success == null) return;
 
                 Intent i = new Intent(getApplicationContext(), AttractieMetingSpec.class);
                 Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(1000); // 5000 miliseconds = 5 seconds
                 pb_meet_mij.setVisibility(View.VISIBLE);
                 i.putExtra("ATTRACTIE1", attractie);
-                i.putExtra("DATA", data);
+                i.putExtra("DATA", success.stop());
                 WifiConnection.Disconnect(getApplicationContext());
 
                 startActivity(i);
@@ -95,7 +95,7 @@ public class MeetMij extends AppCompatActivity {
                 animator.start();
 
                 TextView status = Widget.find(MeetMij.this, R.id.tv_meet_mij_status);
-                IThread success = new MyMetingThread(attractie.getId());
+                success = new MyMetingThread(attractie.getId());
                 IThread fail = new IThread() {
                     @Override
                     public void start() {
@@ -124,9 +124,5 @@ public class MeetMij extends AppCompatActivity {
     private void swapStartStop(boolean start) {
         btn_meet_mij_start.setEnabled(!start);
         btn_meet_mij_stop.setEnabled(start);
-    }
-
-    public void setSensorData(SensorData data) {
-
     }
 }

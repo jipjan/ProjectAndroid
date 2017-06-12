@@ -47,6 +47,10 @@ public class MyWifiThread implements IThread {
         _thread.start();
     }
 
+    public void stop() {
+        _thread.interrupt();
+    }
+
     private void updateStatusText(final String text) {
         _activity.runOnUiThread(new Runnable() {
             @Override

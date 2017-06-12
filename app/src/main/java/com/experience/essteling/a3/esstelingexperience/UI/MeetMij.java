@@ -16,9 +16,12 @@ import android.widget.TextView;
 import com.experience.essteling.a3.esstelingexperience.DataRetriever.DataHandler;
 import com.experience.essteling.a3.esstelingexperience.DataRetriever.IDataListener;
 import com.experience.essteling.a3.esstelingexperience.Entities.Attractie;
-import com.experience.essteling.a3.esstelingexperience.R;
+import com.experience.essteling.a3.esstelingexperience.Entities.MetingenData;
 import com.experience.essteling.a3.esstelingexperience.Entities.SensorData;
-import com.experience.essteling.a3.esstelingexperience.Entities.SensorDataList;
+import com.experience.essteling.a3.esstelingexperience.Helpers.MyThread;
+import com.experience.essteling.a3.esstelingexperience.R;
+import com.experience.essteling.a3.esstelingexperience.Entities.Data;
+import com.experience.essteling.a3.esstelingexperience.Entities.AttractieData;
 import com.experience.essteling.a3.esstelingexperience.Helpers.WifiConnection;
 
 public class MeetMij extends AppCompatActivity {
@@ -29,7 +32,7 @@ public class MeetMij extends AppCompatActivity {
     public ImageView imageBackground1;
     public ImageView imageBackground2;
     public ImageView imageBackground3;
-
+    private MyThread sensorData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,11 +68,16 @@ public class MeetMij extends AppCompatActivity {
         btn_meet_mij_stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (sensorData == null) return;
+
+                SensorData data = sensorData.stop();
+
                 Intent i = new Intent(getApplicationContext(), AttractieMetingSpec.class);
                 Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(1000); // 5000 miliseconds = 5 seconds
                 pb_meet_mij.setVisibility(View.VISIBLE);
                 i.putExtra("ATTRACTIE1", attractie);
+                i.putExtra("DATA", data);
                 WifiConnection.Disconnect(getApplicationContext());
 
                 startActivity(i);
@@ -90,37 +98,17 @@ public class MeetMij extends AppCompatActivity {
                 animator.start();
                 WifiConnection.Connect(getApplicationContext());
 
+                // TODO: Dit in een task systeem
                 while (!WifiConnection.isConnected(getApplication())) {
-                    try {
-                        Thread.sleep(250);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    MyThread.sleep(250);
                 }
 
-                // meten tot op stop gedrukt
-                // 2x per seconde
-                // opslaan in een nieuwe lijst die onderdeel wordt van de sensordataattractie
+                sensorData = new MyThread(attractie.getId());
+                sensorData.start();
 
-                SensorDataList list = new SensorDataList();
-
-                DataHandler d = new DataHandler(list, new IDataListener() {
-                    @Override
-                    public void onFinish(SensorData meting) {
-                        System.out.println("Something went right!");
-                    }
-                    @Override
-                    public void onError() {
-                        System.out.println("Errors everywhere!");
-                    }
-                });
-                d.execute();
                 btn_meet_mij_start.setEnabled(false);
                 btn_meet_mij_stop.setEnabled(true);
                 pb_meet_mij.setVisibility(View.VISIBLE);
-
-
-
             }
         });
 

@@ -3,8 +3,8 @@ package com.experience.essteling.a3.esstelingexperience.DataRetriever;
 import android.os.AsyncTask;
 
 import com.experience.essteling.a3.esstelingexperience.Helpers.MyThread;
-import com.experience.essteling.a3.esstelingexperience.Entities.SensorData;
-import com.experience.essteling.a3.esstelingexperience.Entities.SensorDataList;
+import com.experience.essteling.a3.esstelingexperience.Entities.Data;
+import com.experience.essteling.a3.esstelingexperience.Entities.AttractieData;
 
 import org.json.JSONObject;
 
@@ -24,7 +24,7 @@ public class DataHandler extends AsyncTask<String, Void, String> {
 
     private IDataListener _listener;
 
-    public DataHandler(SensorDataList list, IDataListener listener) { _listener = listener; }
+    public DataHandler(IDataListener listener) { _listener = listener; }
 
 
 
@@ -65,7 +65,7 @@ public class DataHandler extends AsyncTask<String, Void, String> {
                 double speed = obj.getDouble("speed");
                 double height = obj.getDouble("altitude");
                 long ms = obj.getLong("millis");
-                _listener.onFinish(new SensorData(speed, height, ms));
+                _listener.onFinish(new Data(speed, height, ms));
             } catch (Exception e) {
                 e.printStackTrace();
                 _listener.onError();

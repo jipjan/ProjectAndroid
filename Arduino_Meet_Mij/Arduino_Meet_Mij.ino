@@ -2,9 +2,11 @@
 // connected to WeMos D1 mini (ESP8266)
 // acting as a server and WiFi access point
 // 
-// Hans van der Linden - Avans Hogeschool
+// Blueprint by Hans van der Linden - Avans Hogeschool
 // 2017-05-28
 // 
+// Edited by Patrick Eversdijk
+//
 // Based on open source / public domain example code for MPU6050 and ESP8266
 // This code is open source & public domain
 // 

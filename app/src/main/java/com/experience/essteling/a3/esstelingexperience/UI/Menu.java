@@ -2,8 +2,12 @@ package com.experience.essteling.a3.esstelingexperience.UI;
 
 import android.animation.ValueAnimator;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.Button;
@@ -27,6 +31,20 @@ public class Menu extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         MetingenData.ITEMS.load(getApplicationContext());
+
+        /* adapt the image to the size of the display */
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        Bitmap bmp = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(
+                getResources(),R.drawable.fairtaleboommin),size.x,size.y,true);
+
+
+
+
+    /* fill the background ImageView with the resized image */
+        ImageView iv_background = (ImageView) findViewById(R.id.imageView);
+        iv_background.setImageBitmap(bmp);
 
         imageBackground1 = (ImageView) findViewById(R.id.background1);
         imageBackground2 = (ImageView) findViewById(R.id.background2);

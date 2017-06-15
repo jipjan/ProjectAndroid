@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#a3deff"
+    android:background="#EE2144"
 
     tools:context="com.experience.essteling.a3.esstelingexperience.UI.Menu">
 
@@ -12,14 +12,13 @@
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:color/transparent" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/background3"
@@ -30,7 +29,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/background2"
-        app:srcCompat="@drawable/railsje" />
+        app:srcCompat="@android:color/transparent" />
 
     <ImageView
         android:id="@+id/background1"
@@ -42,20 +41,20 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/background2"
-        app:srcCompat="@drawable/karratjerechts" />
+        app:srcCompat="@android:color/transparent" />
 
     <ImageView
         android:id="@+id/background2"
         android:layout_width="220dp"
         android:layout_height="130dp"
+        android:layout_marginBottom="8dp"
         android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/karratjerechts"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.405" />
+        app:layout_constraintVertical_bias="0.405"
+        app:srcCompat="@android:color/transparent" />
 
     <Button
         android:id="@+id/btn_menu_meetmij"

@@ -16,6 +16,7 @@ import static com.experience.essteling.a3.esstelingexperience.Entities.Constants
 
 public class MetingenData extends HashMap<Integer, AttractieData> implements Serializable {
     public static MetingenData ITEMS = new MetingenData();
+    private static boolean _isLoaded;
 
     private MetingenData() {}
 
@@ -34,6 +35,11 @@ public class MetingenData extends HashMap<Integer, AttractieData> implements Ser
     }
 
     public void load(Context c) {
-        ITEMS = SaveLoad.load(c, FILENAME);
+        if (!_isLoaded) {
+            _isLoaded = true;
+            MetingenData data = SaveLoad.load(c, FILENAME);
+            if (data != null)
+                ITEMS = data;
+        }
     }
 }

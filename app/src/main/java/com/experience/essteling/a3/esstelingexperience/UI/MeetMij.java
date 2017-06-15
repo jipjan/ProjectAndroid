@@ -115,8 +115,8 @@ public class MeetMij extends AppCompatActivity {
                         });
                     }
                 };
-                MyWifiThread thread = new MyWifiThread(success, fail, MeetMij.this, status);
-                thread.start();
+                MyWifiThread wifi = new MyWifiThread(success, fail, MeetMij.this, status);
+                wifi.start();
 
                 swapStartStop(true);
                 pb_meet_mij.setVisibility(View.VISIBLE);

@@ -15,6 +15,17 @@ typedef struct accel_gyro_temp_t
   int16_t temp;
 };
 
+typedef struct offset_calibration
+{
+  int32_t accel_x;
+  int32_t accel_y;
+  int32_t accel_z;
+  int32_t gyro_x;
+  int32_t gyro_y;
+  int32_t gyro_z;
+  int32_t temp;
+};
+
 typedef struct accel_temp_gyro_raw_t
 {
   uint8_t accel_xh;

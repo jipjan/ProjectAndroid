@@ -44,11 +44,11 @@
 // Low pass filter coefficient for smoothing the raw data
 // Low pass filter coefficient must be between 0 and low pass filter constant
 #define LOW_PASS_FILTER_CONSTANT 8
-#define LOW_PASS_FILTER_COEFFICIENT 2
+#define LOW_PASS_FILTER_COEFFICIENT 4
 
 // Offset for sensor values, determined during offset calibration
 // TODO Make the offset variable a static global variable (no external linkage)
-accel_gyro_temp_t offset;
+offset_calibration offset;
 #define NUMBER_OF_ZERO_OFFSET_MEASUREMENTS 20
 
 

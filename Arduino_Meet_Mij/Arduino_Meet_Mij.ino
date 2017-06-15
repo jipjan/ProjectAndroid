@@ -1,4 +1,4 @@
-// Demo sketch for MPU-6050 Accelerometer + Gyro sensor
+ // Demo sketch for MPU-6050 Accelerometer + Gyro sensor
 // connected to WeMos D1 mini (ESP8266)
 // acting as a server and WiFi access point
 // 
@@ -19,47 +19,51 @@
 Adafruit_BMP085 bmp;
 
 // Define interval between samples
-const unsigned long sampleInterval = 200000L; // microseconds
+const unsigned long sampleInterval =50000L; // microseconds
 
 unsigned long lastMicros;
 unsigned long currentMicros;
 int columnCounter = 0;
 int seaLevelPressure = 0;
-int height = 17;
+int height = 0;
+float g_x, g_y, g_z, gyro_x, gyro_y, gyro_z, altitude;
+float speed_x, speed_y, speed_z, speed_estimation;
+float filter_x, filter_y, filter_z;
 
 accel_temp_gyro_raw_t rawSensorData;
 accel_gyro_temp_t sensorData;
 accel_gyro_temp_t sensorDataLowPassFiltered;
 
-const char* ssid = "ESPapTechInf";
-const char* password = "MPU6050DEMO";
+const char* ssid = "MeetMijBabyOneMoreTime";
+const char* password = "MeetMijPlease";
 
 const int PORT = 8080;
 WiFiServer server(PORT);
 
 
 void write_data_to_serial() {
-  Serial.print(F("Accel: x = "));
-  Serial.print(sensorDataLowPassFiltered.accel_x);
+  //Serial.print(F("Meeting: x = "));
+  //Serial.print(filter_x);
+  //Serial.print(F(", y = "));
+  //Serial.print(filter_y);
+  //Serial.print(F(", z = "));
+  //Serial.println(filter_z); 
+  Serial.print(F("Speed: x = "));
+  Serial.print(speed_x);
   Serial.print(F(", y = "));
-  Serial.print(sensorDataLowPassFiltered.accel_y);
+  Serial.print(speed_y);
   Serial.print(F(", z = "));
-  Serial.print(sensorDataLowPassFiltered.accel_z);
-  Serial.print(F(", Gyro: x = "));
-  
-  Serial.print(sensorDataLowPassFiltered.gyro_x);
-  Serial.print(F(", y = "));
-  Serial.print(sensorDataLowPassFiltered.gyro_y);
-  Serial.print(F(", z = "));
-  Serial.print(sensorDataLowPassFiltered.gyro_z);
-  Serial.print(F(", ms:"));
-  
-  Serial.print(millis());
-  Serial.println(F(""));
+  Serial.println(speed_z);
+  Serial.print(F("ms:"));
+  Serial.println(millis());
 
-    Serial.print(F("Altitude = "));
-  Serial.print(bmp.readAltitude((float) seaLevelPressure));
-  Serial.println(F(" Meter"));
+  //Serial.print(F("Altitude = "));
+  //Serial.print(altitude);
+  //Serial.println(F(" Meter"));
+  
+  Serial.print(F("speed = "));
+  Serial.print(speed_estimation);
+  Serial.println(F(" m/s"));
 }
 
 bool isGetRequest(String header) {
@@ -78,26 +82,16 @@ String prepareGetResponse(accel_gyro_temp_t* sensorData) {
   response += "\r\n";
 
   String json = "{\r\n";
-  json += "\"accel_x\":";
-  json += sensorData->accel_x;
+  json += "\"speed\":";
+  json += speed_estimation;
   json += ",\r\n";
-  json += "\"accel_y\":";
-  json += sensorData->accel_y;
+  json += "\"altitude\":";
+  json += altitude;
   json += ",\r\n";
-  json += "\"accel_z\":";
-  json += sensorData->accel_z;
-  json += ",\r\n";
-  json += "\"gyro_x\":";
-  json += sensorData->gyro_x;
-  json += ",\r\n";
-  json += "\"gyro_y\":";
-  json += sensorData->gyro_y;
-  json += ",\r\n";
-  json += "\"gyro_z\":";
-  json += sensorData->gyro_z;
+  json += "\"millis\":";
+  json += millis();
   json += "\r\n";
   json += "}\r\n";
-
   response += json;
   response += "\r\n";
   return response;
@@ -116,6 +110,7 @@ String preparePostResponse() {
 
 void setup() {
   // Open the serial port
+  
   Serial.begin(115200);
 
  if (!bmp.begin()) 
@@ -205,6 +200,28 @@ void loop() {
     }
     
     // Send the data to the serial port (debugging)
+    filter_x = sensorDataLowPassFiltered.accel_x / 8192.0f;
+    filter_y = sensorDataLowPassFiltered.accel_y / 8192.0f;
+    filter_z = sensorDataLowPassFiltered.accel_z / 8192.0f;
+    if(filter_x > 0.02 || filter_x < -0.02){
+    g_x = filter_x;}
+    else{g_x=0;}
+    if(filter_y > 0.02 || filter_y < -0.02){
+    g_y = filter_y;}
+    else{g_y=0;}
+    if(filter_z > 0.02 || filter_z < -0.02){
+    g_z = filter_z;}
+    else{g_z=0;}
+    
+    gyro_x = sensorDataLowPassFiltered.gyro_x;
+    gyro_y = sensorDataLowPassFiltered.gyro_y;
+    gyro_z = sensorDataLowPassFiltered.gyro_z;
+    
+    altitude = bmp.readAltitude((float) seaLevelPressure);
+    speed_x += g_x * 9.81 / 20;
+    speed_y += g_y * 9.81 / 20;
+    speed_z += g_z * 9.81 / 20;
+    speed_estimation = sqrt(speed_x*speed_x + speed_y*speed_y + speed_z*speed_z); 
     write_data_to_serial();
   }
   
@@ -214,7 +231,6 @@ void loop() {
   WiFiClient client = server.available();
   if (client) {
     Serial.println("Client found");
-    Serial.println(millis());
     String httpHeader = "";
     while (client.connected()) {
       Serial.println("Client connected");
@@ -222,7 +238,7 @@ void loop() {
         // Client has sent a request, so handle it
         String line = client.readStringUntil('\r');
         httpHeader += line;
-        Serial.print(line); // Show each line of the client request
+        //Serial.print(line); // Show each line of the client request
         if (line.length() == 1 && line[0] == '\n') {
           // End of client request (= empty line) reached
           //Serial.println("End of client request");
@@ -231,7 +247,7 @@ void loop() {
             client.println(prepareGetResponse(&sensorDataLowPassFiltered));
             break;
           } else if (isPostRequest(httpHeader)) {
-            Serial.println("Sending dummy response to POST");
+           Serial.println("Sending dummy response to POST");
             client.println(preparePostResponse());
             break;
           } else {

@@ -30,13 +30,16 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.LijstViewHolde
     public void onBindViewHolder(DataAdapter.LijstViewHolder attractieViewHolder, int i) {
         SensorData ci = _data.get(i);
         attractieViewHolder.maxSnelheid.setText(""+ci.getHighestSpeed());
+        attractieViewHolder.maxHoogte.setText(""+ci.getHighestPoint());
+        attractieViewHolder.gemSnelheid.setText(""+ci.getAverageSpeed());
+        attractieViewHolder.gemHoogte.setText(""+ ci.getAverageHeight());
     }
 
     @Override
     public DataAdapter.LijstViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.
                 from(viewGroup.getContext()).
-                inflate(R.layout.lijst_adapter_metingen, viewGroup, false);
+                inflate(R.layout.lijst_adapter_data, viewGroup, false);
 
         return new DataAdapter.LijstViewHolder(itemView);
     }
@@ -48,11 +51,17 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.LijstViewHolde
 
     public class LijstViewHolder extends RecyclerView.ViewHolder {
         protected TextView maxSnelheid;
+        protected TextView maxHoogte;
+        protected TextView gemSnelheid;
+        protected TextView gemHoogte;
 
         public LijstViewHolder(View v) {
             super(v);
             v.setOnClickListener(MeetMijLijst.Click);
-            maxSnelheid = Widget.find(v, R.id.tv_attractie_meting_spec_snelheid);
+            maxSnelheid = Widget.find(v, R.id.data_snelheid_max);
+            maxHoogte = Widget.find(v,R.id.data_hoogte_max);
+            gemHoogte = Widget.find(v, R.id.data_hoogte_gemiddeld);
+            gemSnelheid = Widget.find(v,R.id.data_snelheid_gemiddelde);
         }
     }
 }

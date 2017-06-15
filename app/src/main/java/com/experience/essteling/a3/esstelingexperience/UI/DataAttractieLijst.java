@@ -2,6 +2,7 @@ package com.experience.essteling.a3.esstelingexperience.UI;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,11 +25,16 @@ public class DataAttractieLijst extends AppCompatActivity {
         setTitle("Metingen");
 
         Attractie attractie = (Attractie) getIntent().getSerializableExtra("ATTRACTIE");
-
         AttractieData data = MetingenData.ITEMS.getListOrNew(attractie.getId());
-
         RecyclerView list = Widget.find(this, R.id.lv_metingen_lijstAttracties);
+
+
+        list.setHasFixedSize(true);
+        LinearLayoutManager llm = new LinearLayoutManager(this);
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        list.setLayoutManager(llm);
         list.setAdapter(new DataAdapter(data));
+
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -38,6 +44,9 @@ public class DataAttractieLijst extends AppCompatActivity {
         ImageView im1 = (ImageView) findViewById(R.id.im_data_attractie_lijst_attractie);
         im1.setImageResource(attractie.getImage());
     }
+
+
+
 
 
 }

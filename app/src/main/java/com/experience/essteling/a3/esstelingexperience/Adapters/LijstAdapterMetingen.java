@@ -24,7 +24,6 @@ public class LijstAdapterMetingen extends RecyclerView.Adapter<LijstAdapterMetin
 
     public LijstAdapterMetingen(ArrayList<Attractie> attractieList) {
         this.attractieList = attractieList;
-
     }
 
     @Override

@@ -30,7 +30,6 @@ public class MetingenLijst extends AppCompatActivity {
                 final int position = lv_attracties.getChildLayoutPosition(v);
                 Attractie attractie = attracties.get(position);
                 Intent intent = new Intent(getApplicationContext(), DataAttractieLijst.class);
-
                 intent.putExtra("ATTRACTIE", attractie);
 
                 startActivity(intent);

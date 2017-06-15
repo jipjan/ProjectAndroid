@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.experience.essteling.a3.esstelingexperience.Adapters.DataAdapter;
 import com.experience.essteling.a3.esstelingexperience.Entities.Attractie;
 import com.experience.essteling.a3.esstelingexperience.Entities.AttractieData;
 import com.experience.essteling.a3.esstelingexperience.Entities.MetingenData;
@@ -27,7 +28,7 @@ public class DataAttractieLijst extends AppCompatActivity {
         AttractieData data = MetingenData.ITEMS.getListOrNew(attractie.getId());
 
         RecyclerView list = Widget.find(this, R.id.lv_metingen_lijstAttracties);
-        list.setAdapter(new );
+        list.setAdapter(new DataAdapter(data));
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

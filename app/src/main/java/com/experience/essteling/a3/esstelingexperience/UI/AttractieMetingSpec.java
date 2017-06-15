@@ -63,6 +63,9 @@ public class AttractieMetingSpec extends AppCompatActivity {
                 shareIntent = new Intent(Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
                 shareIntent.putExtra(Intent.EXTRA_SUBJECT,"My app");
+                TextView hoogte = (TextView) findViewById(R.id.tv_attractie_meting_spec_h_max_i);
+                TextView snel = (TextView) findViewById(R.id.tv_attractie_meting_spec_s_max_i);
+                shareBody = "Ik ging vandaag " + snel.getText() + " m/s en ik kwam " + hoogte.getText() + "m hoog!!!";
                 shareIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
                 startActivity(Intent.createChooser(shareIntent, "Share via"));
             }

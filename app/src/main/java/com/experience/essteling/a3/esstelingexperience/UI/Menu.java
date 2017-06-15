@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
@@ -12,9 +13,11 @@ import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.experience.essteling.a3.esstelingexperience.Entities.MetingenData;
 import com.experience.essteling.a3.esstelingexperience.Helpers.SaveLoad;
+import com.experience.essteling.a3.esstelingexperience.Helpers.Widget;
 import com.experience.essteling.a3.esstelingexperience.R;
 
 public class Menu extends AppCompatActivity {
@@ -40,7 +43,18 @@ public class Menu extends AppCompatActivity {
                 getResources(),R.drawable.fairtaleboommin),size.x,size.y,true);
 
 
+        TextView myTextView= Widget.find(this, R.id.txt_titel);
+        Typeface typeFace= Typeface.createFromAsset(getAssets(),"fonts/Verner.ttf");
+        myTextView.setTypeface(typeFace);
 
+        Typeface typeFace2 = Typeface.createFromAsset(getAssets(),"fonts/ErnestineWeb-Bold.ttf");
+        TextView btn1 = Widget.find(this, R.id.btn_menu_meetmij);
+        btn1.setTypeface(typeFace2);
+        TextView btn2 = Widget.find(this, R.id.btn_menu_metingen);
+        btn2.setTypeface(typeFace2);
+
+        TextView titel2 = Widget.find(this,R.id.ondertitel_Menu);
+        titel2.setTypeface(typeFace2);
 
     /* fill the background ImageView with the resized image */
         ImageView iv_background = (ImageView) findViewById(R.id.imageView);

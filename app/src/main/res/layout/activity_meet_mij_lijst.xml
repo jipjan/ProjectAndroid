@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#c5dcf7"
+    android:background="#fafaf7"
     tools:context="com.experience.essteling.a3.esstelingexperience.UI.MeetMijLijst">
 
     <android.support.v7.widget.RecyclerView

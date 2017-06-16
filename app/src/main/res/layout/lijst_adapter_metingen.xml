@@ -16,7 +16,7 @@
         <ImageView
             android:id="@+id/icon"
             android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_height="0dp"
             android:scaleType="fitXY"
             card_view:srcCompat="@color/Background"
             card_view:layout_constraintLeft_toLeftOf="parent"
@@ -28,21 +28,33 @@
 
         <TextView
             android:id="@+id/naam"
-            android:layout_width="216dp"
-            android:layout_height="58dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="0dp"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="0dp"
             android:layout_marginTop="0dp"
-            android:fontFamily="sans-serif-smallcaps"
+            android:fontFamily="casual"
             android:text="@string/NaamAttractie"
-            android:textColor="@id/ondertitel"
+            android:textColor="#EE2144"
             android:textSize="18sp"
+            android:textStyle="bold"
             card_view:layout_constraintBottom_toBottomOf="parent"
-            card_view:layout_constraintHorizontal_bias="0.2"
+            card_view:layout_constraintHorizontal_bias="0.194"
             card_view:layout_constraintLeft_toRightOf="@+id/icon"
             card_view:layout_constraintRight_toRightOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent" />
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintVertical_bias="0.235" />
+
+        <TextView
+            android:id="@+id/aantal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="16dp"
+            android:text="3 metingen"
+            card_view:layout_constraintLeft_toLeftOf="@+id/naam"
+            card_view:layout_constraintTop_toBottomOf="@+id/naam" />
 
     </android.support.constraint.ConstraintLayout>
 

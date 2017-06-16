@@ -71,6 +71,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="@string/Meetmij"
+        android:fontFamily=""
         android:textColor="@android:color/white"
         android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/progressBar"

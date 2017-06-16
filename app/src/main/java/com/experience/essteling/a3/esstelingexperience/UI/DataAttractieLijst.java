@@ -28,7 +28,6 @@ public class DataAttractieLijst extends AppCompatActivity {
         AttractieData data = MetingenData.ITEMS.getListOrNew(attractie.getId());
         RecyclerView list = Widget.find(this, R.id.lv_metingen_lijstAttracties);
 
-
         list.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);

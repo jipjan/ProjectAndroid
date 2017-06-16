@@ -1,16 +1,16 @@
 package com.experience.essteling.a3.esstelingexperience.UI;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.experience.essteling.a3.esstelingexperience.Adapters.LijstAdapterMetingen;
 import com.experience.essteling.a3.esstelingexperience.Entities.Attractie;
+import com.experience.essteling.a3.esstelingexperience.Entities.MetingenData;
 import com.experience.essteling.a3.esstelingexperience.R;
-import com.experience.essteling.a3.esstelingexperience.UI.DataAttractieLijst;
 
 import java.util.ArrayList;
 
@@ -24,15 +24,21 @@ public class MetingenLijst extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_metingen_lijst);
 
+
         Click = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final int position = lv_attracties.getChildLayoutPosition(v);
-                Attractie attractie = attracties.get(position);
-                Intent intent = new Intent(getApplicationContext(), DataAttractieLijst.class);
-                intent.putExtra("ATTRACTIE", attractie);
+                int aantal = MetingenData.ITEMS.getListOrNew(attracties.get(position).getId()).size();
+                if(aantal == 0){
 
-                startActivity(intent);
+                }else {
+                    Attractie attractie = attracties.get(position);
+                    Intent intent = new Intent(getApplicationContext(), DataAttractieLijst.class);
+                    intent.putExtra("ATTRACTIE", attractie);
+
+                    startActivity(intent);
+                }
             }
         };
 

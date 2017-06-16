@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.experience.essteling.a3.esstelingexperience.Entities.Attractie;
+import com.experience.essteling.a3.esstelingexperience.Entities.MetingenData;
 import com.experience.essteling.a3.esstelingexperience.UI.MetingenLijst;
 import com.experience.essteling.a3.esstelingexperience.R;
 
@@ -36,6 +37,11 @@ public class LijstAdapterMetingen extends RecyclerView.Adapter<LijstAdapterMetin
         Attractie ci = attractieList.get(i);
         attractieViewHolder.vName.setText(ci.getNaam());
         attractieViewHolder.vIcon.setImageResource(ci.getImage());
+        int aantal = MetingenData.ITEMS.getListOrNew(ci.getId()).size();
+        if(aantal == 0)
+            attractieViewHolder.vSize.setText("Geen metingen");
+        else
+            attractieViewHolder.vSize.setText(aantal + " metingen");
     }
 
     @Override
@@ -51,12 +57,14 @@ public class LijstAdapterMetingen extends RecyclerView.Adapter<LijstAdapterMetin
     {
         protected TextView vName;
         protected ImageView vIcon;
+        protected TextView vSize;
 
         public LijstViewHolder(View v) {
             super(v);
             v.setOnClickListener(MetingenLijst.Click);
             vName = (TextView) v.findViewById(R.id.naam);
             vIcon = (ImageView) v.findViewById(R.id.icon);
+            vSize = (TextView) v.findViewById(R.id.aantal);
 
         }
     }

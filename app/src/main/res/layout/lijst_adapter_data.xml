@@ -21,7 +21,7 @@
         datacardview:layout_constraintLeft_toRightOf="@+id/textView3"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        datacardview:layout_constraintTop_toBottomOf="@+id/textView" />
+        datacardview:layout_constraintTop_toBottomOf="@+id/aantal" />
 
     <TextView
         android:id="@+id/data_hoogte_gemiddeld"
@@ -56,7 +56,7 @@
         datacardview:layout_constraintTop_toBottomOf="@+id/data_snelheid_gemiddelde" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/aantal"
         android:layout_width="130dp"
         android:layout_height="26dp"
         android:layout_marginLeft="8dp"
@@ -89,7 +89,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/Hoogste"
         datacardview:layout_constraintLeft_toLeftOf="parent"
-        datacardview:layout_constraintTop_toBottomOf="@+id/textView" />
+        datacardview:layout_constraintTop_toBottomOf="@+id/aantal" />
 
     <TextView
         android:id="@+id/textView4"

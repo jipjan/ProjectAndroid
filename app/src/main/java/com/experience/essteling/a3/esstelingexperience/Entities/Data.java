@@ -8,9 +8,9 @@ import java.util.Date;
  */
 
 public class Data implements Serializable {
-    final long Time;
-    final double Speed;
-    final double Height;
+    public final long Time;
+    public final double Speed;
+    public final double Height;
 
     public Data(double speed, double height, long ms) {
         Time = ms;

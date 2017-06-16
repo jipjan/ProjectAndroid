@@ -15,7 +15,12 @@ import com.experience.essteling.a3.esstelingexperience.Entities.MetingenData;
 import com.experience.essteling.a3.esstelingexperience.Entities.SensorData;
 import com.experience.essteling.a3.esstelingexperience.Helpers.Widget;
 import com.experience.essteling.a3.esstelingexperience.R;
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.GridLabelRenderer;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
 
+import java.lang.reflect.Array;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
@@ -96,5 +101,33 @@ public class AttractieMetingSpec extends AppCompatActivity {
                 finish();
             }
         });
+
+        fillGraphs(data);
+    }
+
+    private void fillGraphs(ArrayList<Data> list) {
+        GraphView graphSpeed = Widget.find(this, R.id.im_meeting_gr_s);
+        GraphView graphHeight = Widget.find(this, R.id.im_meeting_gr_h);
+
+        DataPoint[] dataSpeed = new DataPoint[list.size()];
+        DataPoint[] dataHeight = new DataPoint[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            Data d = list.get(i);
+            dataSpeed[i] = new DataPoint(d.Time, d.Speed);
+            dataHeight[i] = new DataPoint(d.Time, d.Height);
+        }
+
+        LineGraphSeries<DataPoint> sSeries = new LineGraphSeries<>(dataSpeed);
+        GridLabelRenderer sR = graphSpeed.getGridLabelRenderer();
+        sR.setHorizontalAxisTitle("Tijd");
+        sR.setVerticalAxisTitle("Snelheid in km/u");
+        graphSpeed.addSeries(sSeries);
+
+        LineGraphSeries<DataPoint> hSeries = new LineGraphSeries<>(dataHeight);
+        GridLabelRenderer hR = graphHeight.getGridLabelRenderer();
+        hR.setHorizontalAxisTitle("Tijd");
+        hR.setVerticalAxisTitle("Snelheid in km/u");
+        graphHeight.addSeries(hSeries);
+
     }
 }

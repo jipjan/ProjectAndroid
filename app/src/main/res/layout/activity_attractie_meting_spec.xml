@@ -188,9 +188,9 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
+    <com.jjoe64.graphview.GraphView
         android:id="@+id/im_meeting_gr_h"
-        android:layout_width="217dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -255,9 +255,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="32dp" />
 
-    <ImageView
+    <com.jjoe64.graphview.GraphView
         android:id="@+id/im_meeting_gr_s"
-        android:layout_width="217dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"

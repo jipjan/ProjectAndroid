@@ -122,12 +122,14 @@ public class AttractieMetingSpec extends AppCompatActivity {
         sR.setHorizontalAxisTitle("Tijd");
         sR.setVerticalAxisTitle("Snelheid in km/u");
         graphSpeed.addSeries(sSeries);
+        graphSpeed.getViewport().setScrollable(true);
 
         LineGraphSeries<DataPoint> hSeries = new LineGraphSeries<>(dataHeight);
         GridLabelRenderer hR = graphHeight.getGridLabelRenderer();
         hR.setHorizontalAxisTitle("Tijd");
         hR.setVerticalAxisTitle("Snelheid in km/u");
         graphHeight.addSeries(hSeries);
+        graphHeight.getViewport().setScrollable(true);
 
     }
 }

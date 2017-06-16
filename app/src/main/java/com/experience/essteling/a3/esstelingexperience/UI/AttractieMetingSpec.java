@@ -11,7 +11,9 @@ import android.widget.TextView;
 
 import com.experience.essteling.a3.esstelingexperience.Entities.Attractie;
 import com.experience.essteling.a3.esstelingexperience.Entities.Data;
+import com.experience.essteling.a3.esstelingexperience.Entities.MetingenData;
 import com.experience.essteling.a3.esstelingexperience.Entities.SensorData;
+import com.experience.essteling.a3.esstelingexperience.Helpers.Widget;
 import com.experience.essteling.a3.esstelingexperience.R;
 
 import java.text.DecimalFormat;
@@ -78,16 +80,21 @@ public class AttractieMetingSpec extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), MeetMij.class);
                 i.putExtra("ATTRACTIE", attractie);
                 startActivity(i);
+                finish();
             }
         });
-//        btn_attractie_meting_spec_verwijderen = (Button) findViewById(R.id.btn_attractie_meting_spec_verwijderen);
-//        btn_attractie_meting_spec_verwijderen.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(getApplicationContext(), DataAttractieLijst.class);
-//                startActivity(i);
-//            }
-//        });
 
+        btn_attractie_meting_spec_verwijderen = Widget.find(this, R.id.btn_attractie_meting_spec_verwijderen);
+        btn_attractie_meting_spec_verwijderen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MetingenData.ITEMS.getListOrNew(attractie.getId()).remove(data);
+                MetingenData.ITEMS.save(getApplicationContext());
+                Intent i = new Intent(getApplicationContext(), MeetMij.class);
+                i.putExtra("ATTRACTIE", attractie);
+                startActivity(i);
+                finish();
+            }
+        });
     }
 }

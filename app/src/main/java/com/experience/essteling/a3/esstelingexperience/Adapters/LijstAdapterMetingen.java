@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 import com.experience.essteling.a3.esstelingexperience.Entities.Attractie;
 import com.experience.essteling.a3.esstelingexperience.Entities.MetingenData;
-import com.experience.essteling.a3.esstelingexperience.UI.MetingenLijst;
 import com.experience.essteling.a3.esstelingexperience.R;
+import com.experience.essteling.a3.esstelingexperience.UI.MetingenLijst;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +22,8 @@ import java.util.List;
 public class LijstAdapterMetingen extends RecyclerView.Adapter<LijstAdapterMetingen.LijstViewHolder> {
 
     private List<Attractie> attractieList;
+
+    TextView vMassage;
 
     public LijstAdapterMetingen(ArrayList<Attractie> attractieList) {
         this.attractieList = attractieList;
@@ -65,7 +67,6 @@ public class LijstAdapterMetingen extends RecyclerView.Adapter<LijstAdapterMetin
             vName = (TextView) v.findViewById(R.id.naam);
             vIcon = (ImageView) v.findViewById(R.id.icon);
             vSize = (TextView) v.findViewById(R.id.aantal);
-
         }
     }
 }

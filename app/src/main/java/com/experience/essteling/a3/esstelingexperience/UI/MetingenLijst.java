@@ -38,7 +38,7 @@ public class MetingenLijst extends AppCompatActivity {
                 final int position = lv_attracties.getChildLayoutPosition(v);
                 int aantal = MetingenData.ITEMS.getListOrNew(attracties.get(position).getId()).size();
                 if (aantal == 0) {
-                    geen_metingen = (TextView) findViewById(R.id.geen_metingen);
+                    geen_metingen = (TextView) v.findViewById(R.id.gaanMetingen);
                     geen_metingen.setVisibility(VISIBLE);
                     Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.resize);
                     geen_metingen.startAnimation(animation);

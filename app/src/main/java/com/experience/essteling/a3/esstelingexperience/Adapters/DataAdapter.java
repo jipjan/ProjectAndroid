@@ -60,7 +60,6 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.LijstViewHolde
 
         public LijstViewHolder(View v) {
             super(v);
-            v.setOnClickListener(MeetMijLijst.Click);
             maxSnelheid = Widget.find(v, R.id.data_snelheid_max);
             maxHoogte = Widget.find(v,R.id.data_hoogte_max);
             gemHoogte = Widget.find(v, R.id.data_hoogte_gemiddeld);

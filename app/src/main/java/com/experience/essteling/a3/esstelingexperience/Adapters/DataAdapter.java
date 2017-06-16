@@ -14,6 +14,8 @@ import com.experience.essteling.a3.esstelingexperience.Helpers.Widget;
 import com.experience.essteling.a3.esstelingexperience.R;
 import com.experience.essteling.a3.esstelingexperience.UI.MeetMijLijst;
 
+import java.text.DecimalFormat;
+
 /**
  * Created by jaapj on 15-6-2017.
  */
@@ -29,10 +31,11 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.LijstViewHolde
     @Override
     public void onBindViewHolder(DataAdapter.LijstViewHolder attractieViewHolder, int i) {
         SensorData ci = _data.get(i);
-        attractieViewHolder.maxSnelheid.setText(""+ci.getHighestSpeed());
-        attractieViewHolder.maxHoogte.setText(""+ci.getHighestPoint());
-        attractieViewHolder.gemSnelheid.setText(""+ci.getAverageSpeed());
-        attractieViewHolder.gemHoogte.setText(""+ ci.getAverageHeight());
+        DecimalFormat df = new DecimalFormat("#.##");
+        attractieViewHolder.maxSnelheid.setText(""+df.format(ci.getHighestSpeed()));
+        attractieViewHolder.maxHoogte.setText(""+df.format(ci.getHighestPoint()));
+        attractieViewHolder.gemSnelheid.setText(""+df.format(ci.getAverageSpeed()));
+        attractieViewHolder.gemHoogte.setText(""+df.format(ci.getAverageHeight()));
     }
 
     @Override

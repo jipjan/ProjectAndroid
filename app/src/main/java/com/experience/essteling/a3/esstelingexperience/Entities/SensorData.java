@@ -16,6 +16,7 @@ public class SensorData extends ArrayList<Data> implements Serializable {
     }
 
     public double getAverageSpeed() {
+        if (size() == 0) return 0;
         double speed = 0;
         for (Data d : this)
             speed += d.Speed;
@@ -23,6 +24,7 @@ public class SensorData extends ArrayList<Data> implements Serializable {
     }
 
     public double getAverageHeight() {
+        if (size() == 0) return 0;
         double height = 0;
         for (Data d : this)
             height += d.Height;

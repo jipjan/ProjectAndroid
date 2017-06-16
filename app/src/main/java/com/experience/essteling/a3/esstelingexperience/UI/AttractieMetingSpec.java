@@ -1,9 +1,8 @@
 package com.experience.essteling.a3.esstelingexperience.UI;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -20,7 +19,6 @@ import com.jjoe64.graphview.GridLabelRenderer;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
-import java.lang.reflect.Array;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
@@ -72,7 +70,7 @@ public class AttractieMetingSpec extends AppCompatActivity {
                 shareIntent.putExtra(Intent.EXTRA_SUBJECT,"My app");
                 TextView hoogte = (TextView) findViewById(R.id.tv_attractie_meting_spec_h_max_i);
                 TextView snel = (TextView) findViewById(R.id.tv_attractie_meting_spec_s_max_i);
-                shareBody = "Ik ging vandaag " + snel.getText() + " m/s en ik kwam " + hoogte.getText() + "m hoog!!!";
+                shareBody = "Ik ging vandaag " + snel.getText() + " en ik kwam " + hoogte.getText() + " hoog!!!";
                 shareIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
                 startActivity(Intent.createChooser(shareIntent, "Share via"));
             }

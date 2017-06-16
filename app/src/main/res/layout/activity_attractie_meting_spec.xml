@@ -16,8 +16,8 @@
 
         <TextView
             android:id="@+id/tv_attractie_meting_spec_naamAttractie"
-            android:layout_width="229dp"
-            android:layout_height="52dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
@@ -50,7 +50,9 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/im_meeting_attractie"
             android:id="@+id/linearLayout"
-            app:layout_constraintHorizontal_bias="0.0">
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
 
             <Button
                 android:id="@+id/btn_attractie_meting_spec_delen"
@@ -93,7 +95,6 @@
             android:id="@+id/tv_attractie_meting_spec_hoogte"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
             android:layout_marginStart="8dp"
             android:text="@string/Hoogte"
             android:textColor="@android:color/black"
@@ -107,7 +108,6 @@
             android:id="@+id/tv_attractie_meting_spec_h_gem"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
@@ -120,7 +120,6 @@
             android:id="@+id/tv_attractie_meting_spec_h_max"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
@@ -131,7 +130,7 @@
 
         <com.jjoe64.graphview.GraphView
             android:id="@+id/im_meeting_gr_h"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="200dp"
             android:layout_margin="8dp"
             android:padding="8dp"
@@ -145,7 +144,6 @@
             android:id="@+id/tv_attractie_meting_spec_snelheid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:text="@string/Snelheid"
@@ -159,7 +157,6 @@
             android:id="@+id/tv_attractie_meting_spec_s_gem"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="7dp"
@@ -172,7 +169,6 @@
             android:id="@+id/tv_attractie_meting_spec_s_max"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
@@ -183,7 +179,7 @@
 
         <com.jjoe64.graphview.GraphView
             android:id="@+id/im_meeting_gr_s"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="200dp"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
@@ -200,7 +196,6 @@
             android:id="@+id/tv_attractie_meting_spec_h_gem_i"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:text="TextView"
@@ -213,19 +208,18 @@
             android:id="@+id/tv_attractie_meting_spec_h_max_i"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="75dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:text="TextView"
             android:textColor="@color/cardview_light_background"
             app:layout_constraintLeft_toRightOf="@+id/tv_attractie_meting_spec_h_max"
-            tools:layout_editor_absoluteY="233dp" />
+            android:layout_marginTop="0dp"
+            app:layout_constraintTop_toTopOf="@+id/tv_attractie_meting_spec_h_max" />
 
         <TextView
             android:id="@+id/tv_attractie_meting_spec_s_gem_i"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:text="TextView"
@@ -238,7 +232,6 @@
             android:id="@+id/tv_attractie_meting_spec_s_max_i"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:text="TextView"

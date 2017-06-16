@@ -27,7 +27,6 @@ import com.experience.essteling.a3.esstelingexperience.Helpers.WifiConnection;
 public class MeetMij extends AppCompatActivity {
 
     public Button btn_meet_mij_stop;
-    public ProgressBar pb_meet_mij;
     public Button btn_meet_mij_start;
     public ImageView imageBackground1;
     public ImageView imageBackground2;
@@ -77,7 +76,6 @@ public class MeetMij extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), AttractieMetingSpec.class);
                 Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(1000); // 5000 miliseconds = 5 seconds
-                pb_meet_mij.setVisibility(View.VISIBLE);
                 i.putExtra("ATTRACTIE1", attractie);
                 i.putExtra("DATA", data);
 
@@ -87,8 +85,6 @@ public class MeetMij extends AppCompatActivity {
             }
         });
 
-
-        pb_meet_mij = (ProgressBar) findViewById(R.id.progressBar);
         btn_meet_mij_start = (Button) findViewById(R.id.btn_meet_mij_start);
 
         btn_meet_mij_start.setOnClickListener(new View.OnClickListener() {
@@ -108,7 +104,6 @@ public class MeetMij extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                pb_meet_mij.setVisibility(View.INVISIBLE);
                                 swapStartStop(false);
                                 animator.end();
                             }
@@ -119,7 +114,6 @@ public class MeetMij extends AppCompatActivity {
                 wifi.start();
 
                 swapStartStop(true);
-                pb_meet_mij.setVisibility(View.VISIBLE);
             }
         });
 

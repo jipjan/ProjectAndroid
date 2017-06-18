@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#188BC4"
+    android:background="#fafaf7"
     tools:context="com.experience.essteling.a3.esstelingexperience.UI.DataAttractieLijst">
 
     <TextView
@@ -19,7 +19,7 @@
         android:fontFamily="sans-serif-smallcaps"
         android:text="@string/NaamAttractie"
         android:textAllCaps="true"
-        android:textColor="@id/titel1"
+        android:textColor="@color/Rood"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/lv_metingen_lijstAttracties"
         app:layout_constraintLeft_toRightOf="@+id/im_data_attractie_lijst_attractie"

@@ -1,14 +1,17 @@
 package com.experience.essteling.a3.esstelingexperience.UI;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.TextView;
 
 import com.experience.essteling.a3.esstelingexperience.Adapters.LijstAdapterMeetMij;
 import com.experience.essteling.a3.esstelingexperience.Entities.Attractie;
+import com.experience.essteling.a3.esstelingexperience.Helpers.Widget;
 import com.experience.essteling.a3.esstelingexperience.R;
 import com.experience.essteling.a3.esstelingexperience.UI.MeetMij;
 

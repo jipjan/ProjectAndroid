@@ -3,6 +3,7 @@ package com.experience.essteling.a3.esstelingexperience.UI;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
@@ -58,12 +59,19 @@ public class MeetMij extends AppCompatActivity {
                 imageBackground2.setTranslationX(translationX - width);
             }
         });
+        Typeface typeFace= Typeface.createFromAsset(getAssets(),"fonts/Verner.ttf");
 
+        Typeface typeFace2 = Typeface.createFromAsset(getAssets(),"fonts/ErnestineWeb-Bold.ttf");
+
+        TextView tv = (TextView) findViewById(R.id.tv_meet_mij_meetmij);
+        tv.setText(String.valueOf(attractie.getNaam()));
+        tv.setTypeface(typeFace);
 
         setTitle("Meet mij");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btn_meet_mij_stop = (Button) findViewById(R.id.btn_meet_mij_stop);
+        btn_meet_mij_stop.setTypeface(typeFace2);
         btn_meet_mij_stop.setEnabled(false);
         btn_meet_mij_stop.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +94,8 @@ public class MeetMij extends AppCompatActivity {
         });
 
         btn_meet_mij_start = (Button) findViewById(R.id.btn_meet_mij_start);
+        btn_meet_mij_start.setTypeface(typeFace2);
+
 
         btn_meet_mij_start.setOnClickListener(new View.OnClickListener() {
 
@@ -117,8 +127,11 @@ public class MeetMij extends AppCompatActivity {
             }
         });
 
-        TextView tv = (TextView) findViewById(R.id.tv_meet_mij_attractie);
-        tv.setText(String.valueOf(attractie.getNaam()));
+        TextView tv1 = (TextView) findViewById(R.id.tv_meet_mij_attractie);
+        tv1.setText(String.valueOf(attractie.getNaam()));
+        tv.setTypeface(typeFace2);
+
+
     }
 
     private void swapStartStop(boolean start) {

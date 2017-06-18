@@ -1,6 +1,7 @@
 package com.experience.essteling.a3.esstelingexperience.UI;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -39,20 +40,29 @@ public class AttractieMetingSpec extends AppCompatActivity {
         final SensorData data = new SensorData((ArrayList<Data>) getIntent().getSerializableExtra("DATA"));
         final Attractie attractie = (Attractie) getIntent().getSerializableExtra("ATTRACTIE1");
 
+        Typeface typeFace= Typeface.createFromAsset(getAssets(),"fonts/Verner.ttf");
+
+        Typeface typeFace2 = Typeface.createFromAsset(getAssets(),"fonts/ErnestineWeb-Bold.ttf");
+
         TextView tv = (TextView) findViewById(R.id.tv_attractie_meting_spec_naamAttractie);
         tv.setText(String.valueOf(attractie.getNaam()));
+        tv.setTypeface(typeFace);
 
         TextView tvgemh = (TextView) findViewById(R.id.tv_attractie_meting_spec_h_gem_i);
         tvgemh.setText(String.valueOf(df.format(data.getAverageHeight())) + " meter");
+        tvgemh.setTypeface(typeFace2);
 
         TextView tvgems = (TextView) findViewById(R.id.tv_attractie_meting_spec_s_gem_i);
         tvgems.setText(String.valueOf(df.format(data.getAverageSpeed() * 3.6)) + " km/u");
+        tvgems.setTypeface(typeFace2);
 
         TextView tvhs = (TextView) findViewById(R.id.tv_attractie_meting_spec_s_max_i);
         tvhs.setText(String.valueOf(df.format(data.getHighestSpeed() * 3.6)) + " km/u");
+        tvhs.setTypeface(typeFace2);
 
         TextView tvhh = (TextView) findViewById(R.id.tv_attractie_meting_spec_h_max_i);
         tvhh.setText(String.valueOf(df.format(data.getHighestPoint())) + " meter");
+        tvhh.setTypeface(typeFace2);
 
         ImageView im1 = (ImageView) findViewById(R.id.im_meeting_attractie);
         im1.setImageResource(Integer.parseInt(String.valueOf(attractie.getImage())));
@@ -61,6 +71,7 @@ public class AttractieMetingSpec extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btn_attractie_meting_spec_delen = (Button) findViewById(R.id.btn_attractie_meting_spec_delen);
+        btn_attractie_meting_spec_delen.setTypeface(typeFace2);
         btn_attractie_meting_spec_delen.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -77,6 +88,7 @@ public class AttractieMetingSpec extends AppCompatActivity {
         });
 
         btn_attractie_meting_spec_meetmij = (Button) findViewById(R.id.btn_attractie_meting_spec_meetmij);
+        btn_attractie_meting_spec_meetmij.setTypeface(typeFace2);
         btn_attractie_meting_spec_meetmij.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,6 +100,7 @@ public class AttractieMetingSpec extends AppCompatActivity {
         });
 
         btn_attractie_meting_spec_verwijderen = Widget.find(this, R.id.btn_attractie_meting_spec_verwijderen);
+        btn_attractie_meting_spec_verwijderen.setTypeface(typeFace2);
         btn_attractie_meting_spec_verwijderen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,5 +1,6 @@
 package com.experience.essteling.a3.esstelingexperience.Adapters;
 
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.experience.essteling.a3.esstelingexperience.Entities.Attractie;
+import com.experience.essteling.a3.esstelingexperience.Helpers.Widget;
 import com.experience.essteling.a3.esstelingexperience.UI.MeetMijLijst;
 import com.experience.essteling.a3.esstelingexperience.R;
 
@@ -36,6 +38,7 @@ public class LijstAdapterMeetMij extends RecyclerView.Adapter<LijstAdapterMeetMi
         attractieViewHolder.vName.setText(ci.getNaam());
         attractieViewHolder.vIcon.setImageResource(ci.getImage());
         attractieViewHolder.vSoort.setText(ci.getSoort());
+
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.experience.essteling.a3.esstelingexperience.UI;
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -34,11 +35,17 @@ public class DataAttractieLijst extends AppCompatActivity {
         list.setLayoutManager(llm);
         list.setAdapter(new DataAdapter(data));
 
+        Typeface typeFace= Typeface.createFromAsset(getAssets(),"fonts/Verner.ttf");
+
+        Typeface typeFace2 = Typeface.createFromAsset(getAssets(),"fonts/ErnestineWeb-Bold.ttf");
+
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         TextView tv = Widget.find(this, R.id.tv_data_attractie_lijst_attractie);
+        tv.setTypeface(typeFace);
         tv.setText(String.valueOf(attractie.getNaam()));
+
 
         ImageView im1 = (ImageView) findViewById(R.id.im_data_attractie_lijst_attractie);
         im1.setImageResource(attractie.getImage());

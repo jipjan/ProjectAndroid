@@ -64,8 +64,9 @@ public class MeetMij extends AppCompatActivity {
         Typeface typeFace2 = Typeface.createFromAsset(getAssets(),"fonts/ErnestineWeb-Bold.ttf");
 
         TextView tv = (TextView) findViewById(R.id.tv_meet_mij_meetmij);
-        tv.setText(String.valueOf(attractie.getNaam()));
         tv.setTypeface(typeFace);
+        tv.setText(String.valueOf(attractie.getNaam()));
+
 
         setTitle("Meet mij");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -129,7 +130,7 @@ public class MeetMij extends AppCompatActivity {
 
         TextView tv1 = (TextView) findViewById(R.id.tv_meet_mij_attractie);
         tv1.setText(String.valueOf(attractie.getNaam()));
-        tv.setTypeface(typeFace2);
+        tv1.setTypeface(typeFace2);
 
 
     }

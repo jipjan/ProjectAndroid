@@ -30,7 +30,7 @@
             android:fontFamily="casual"
             android:text="@string/NaamAttractie"
             android:textColor="#EE2144"
-            android:textSize="18sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintHorizontal_bias="0.194"

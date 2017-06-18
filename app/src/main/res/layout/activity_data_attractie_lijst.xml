@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#a3deff"
+    android:background="#188BC4"
     tools:context="com.experience.essteling.a3.esstelingexperience.UI.DataAttractieLijst">
 
     <TextView

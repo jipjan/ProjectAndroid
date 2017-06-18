@@ -16,6 +16,8 @@ import com.experience.essteling.a3.esstelingexperience.Entities.MetingenData;
 import com.experience.essteling.a3.esstelingexperience.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
@@ -86,5 +88,14 @@ public class MetingenLijst extends AppCompatActivity {
 
         lv_attracties.setAdapter(new LijstAdapterMetingen(attracties));
 
+
+        if (attracties.size() > 0) {
+            Collections.sort(attracties, new Comparator<Attractie>() {
+                @Override
+                public int compare(final Attractie object1, final Attractie object2) {
+                    return object1.getNaam().compareTo(object2.getNaam());
+                }
+            });
+        }
     }
 }

@@ -2,6 +2,7 @@ package com.experience.essteling.a3.esstelingexperience.UI;
 
 import android.animation.ValueAnimator;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
@@ -22,6 +23,8 @@ import com.experience.essteling.a3.esstelingexperience.R;
 
 public class Menu extends AppCompatActivity {
 
+    public static AssetManager Assests;
+
     public Button btn_menu_meetmij;
     public Button btn_menu_metingen;
     public ImageView imageBackground1;
@@ -34,6 +37,7 @@ public class Menu extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         MetingenData.ITEMS.load(getApplicationContext());
+        Assests = getAssets();
 
         /* adapt the image to the size of the display */
         Display display = getWindowManager().getDefaultDisplay();

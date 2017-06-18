@@ -1,5 +1,6 @@
 package com.experience.essteling.a3.esstelingexperience.Adapters;
 
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.experience.essteling.a3.esstelingexperience.Entities.SensorData;
 import com.experience.essteling.a3.esstelingexperience.Helpers.Widget;
 import com.experience.essteling.a3.esstelingexperience.R;
 import com.experience.essteling.a3.esstelingexperience.UI.MeetMijLijst;
+import com.experience.essteling.a3.esstelingexperience.UI.Menu;
 
 import java.text.DecimalFormat;
 

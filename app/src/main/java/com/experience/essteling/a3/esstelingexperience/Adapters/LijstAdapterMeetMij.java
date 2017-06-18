@@ -12,6 +12,7 @@ import com.experience.essteling.a3.esstelingexperience.Entities.Attractie;
 import com.experience.essteling.a3.esstelingexperience.Helpers.Widget;
 import com.experience.essteling.a3.esstelingexperience.UI.MeetMijLijst;
 import com.experience.essteling.a3.esstelingexperience.R;
+import com.experience.essteling.a3.esstelingexperience.UI.Menu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,13 @@ public class LijstAdapterMeetMij extends RecyclerView.Adapter<LijstAdapterMeetMi
     @Override
     public void onBindViewHolder(LijstViewHolder attractieViewHolder, int i) {
         Attractie ci = attractieList.get(i);
+
+        Typeface typeFace1 = Typeface.createFromAsset(Menu.Assests,"fonts/ErnestineWeb-Bold.ttf");
+        Typeface typeFace2 = Typeface.createFromAsset(Menu.Assests,"fonts/Verner.ttf");
+
+        attractieViewHolder.vName.setTypeface(typeFace2);
+        attractieViewHolder.vSoort.setTypeface(typeFace1);
+
         attractieViewHolder.vName.setText(ci.getNaam());
         attractieViewHolder.vIcon.setImageResource(ci.getImage());
         attractieViewHolder.vSoort.setText(ci.getSoort());

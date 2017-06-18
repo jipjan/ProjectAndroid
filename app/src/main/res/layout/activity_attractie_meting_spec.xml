@@ -63,7 +63,7 @@
                 android:fontFamily="sans-serif-smallcaps"
                 android:text="@string/Delen"
                 android:textColor="@android:color/white"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
             <Button
@@ -75,7 +75,7 @@
                 android:fontFamily="sans-serif-smallcaps"
                 android:text="@string/Meetmij"
                 android:textColor="@android:color/white"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
             <Button
@@ -87,7 +87,7 @@
                 android:fontFamily="sans-serif-smallcaps"
                 android:text="@string/Verwijderen"
                 android:textColor="@android:color/white"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
 

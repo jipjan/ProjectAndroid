@@ -9,11 +9,12 @@
     <string name="Menu">Menu</string>
     <string name="Metingen">Metingen</string>
     <string name="NaamAttractie">Attractie</string>
-    <string name="Progress">Progress</string>
+    <string name="Progress">Progres</string>
     <string name="Snelheid">Snelheid</string>
     <string name="Snelste">Snelste</string>
     <string name="Start">Start</string>
     <string name="Stop">Stop</string>
     <string name="Verwijderen">Verwijderen</string>
     <string name="Datum">Datum</string>
+    <string name="meting">Meting</string>
 </resources>
